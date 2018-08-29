@@ -1,0 +1,16 @@
+body {
+	/* font-family: 'Comic Sans MS'; */
+}
+
+img {
+	max-width: none;
+	width: 100%;
+}
+
+.characters-home {
+	padding: 15px 0;
+}
+
+.myNavDark {
+	background-color: rgb(10, 54, 91) !important;
+}
