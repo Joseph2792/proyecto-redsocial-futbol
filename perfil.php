@@ -1,5 +1,5 @@
 <?php
-	$pageTitle = "Home";
+	$pageTitle = "Perfil";
 	include "partials/head.php";
 ?>
     <!--navbar-->

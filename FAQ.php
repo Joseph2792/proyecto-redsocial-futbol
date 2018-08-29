@@ -1,5 +1,5 @@
 <?php
-	$pageTitle = "Home";
+	$pageTitle = "FAQ";
 	include "partials/head.php";
 ?>
     <!--navbar-->
@@ -9,5 +9,7 @@
     
     <!--fin del contenido-->
 
+    <!--footer-->
+    <?php require_once "partials/footer.php"; ?>
     <!--scripts ed jquery y bootstrap-->
     <?php require_once "partials/scripts.php"; ?>
