@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RedSocial - Futbol</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+<?php
+	$pageTitle = "Login";
+	include "partials/head.php";
+?>
     <!--navbar-->
+    <?php require_once "partials/header-nav.php"; ?>
 
     <!--contenido de las secciones: login y registro home, amigos, faq, perfil-->
     
+    <!--fin del contenido-->
+
     <!--footer-->
-    
-    <!-- Librería de jQuery -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <!-- Librería de JS de Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+    <?php require_once "partials/footer.php"; ?>
+    <!--scripts ed jquery y bootstrap-->
+    <?php require_once "partials/scripts.php"; ?>
