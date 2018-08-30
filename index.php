@@ -2,6 +2,8 @@
 	$pageTitle = "Home";
 	include "partials/head.php";
 ?>
+    <!--navbar login-->
+    <?php require_once "partials/nav-login.php"; ?>
     <!--navbar-->
     <?php require_once "partials/header-nav.php"; ?>
 
