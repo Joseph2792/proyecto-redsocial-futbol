@@ -2,15 +2,54 @@ body {
 	/* font-family: 'Comic Sans MS'; */
 }
 
-img {
-	max-width: none;
-	width: 100%;
-}
-
 .characters-home {
 	padding: 15px 0;
 }
 
 .myNavDark {
 	background-color: rgb(10, 54, 91) !important;
+}
+
+/* inicio estilos de la home */
+
+.post-icons {
+	width: 30px;
+}
+
+ul {
+	list-style: none;
+}
+
+.tipodepost-container{
+	background-color: #3f94a1;
+	padding: 15px 0px;
+}
+
+.tipodepost-container a{
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	width: 33%;
+	padding: 15px;
+	justify-content: space-evenly;
+	}
+
+.tipodepost-container ul{
+	display: flex;
+	flex-direction: row;
+	align-content: space-evenly;
+	justify-content: space-evenly;
+	padding: 0px;
+}
+
+.tipodepost-container ul li{
+	text-align: center;
+	padding-top: auto;
+	padding-bottom: auto;
+}
+
+li a i{
+font-size: 25px;
+color: white;
+margin-right: 12px;
 }
