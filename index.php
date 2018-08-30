@@ -28,11 +28,61 @@
 
       <div class="col-6">
         <div class="post-container">
-            
+          <div class="post-description">
+            <img src="img/icons/trofeo.png" class="event-icon-trophy">
+            <br>
+            <div class="description">
+              <h4>Torneo - Club Angel Gallardo</h4>
+              <h6>Jueves 23 de agosto, $130 por persona</h6>
+              <br>
+            </div>
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+
+          <div class="second-row-container">
+            <div class="teams">
+              <h5>Equipo 1:</h5>
+              <br>
+              <h5>Equipo 2:</h5>
+            </div>
+
+            <div class="join">
+              <img src="img/icons/agregar.svg" class="join-icon">
+              UNIRSE
+            </div>
+          </div>
+          <footer class="post-footer">ACA VAN A IR LOS BOTONES DE LIKE Y COMMENT</footer>
         </div>
 
       </div>
+      <br>
+      <div class="col-6">
+        <div class="post-container">
+          <div class="post-description">
+            <img src="img/icons/pelota.png" class="event-icon-ball">
+            <br>
+            <div class="description">
+              <h4>Partido - Open Gallo</h4>
+              <h6>Jueves 23 de agosto, $80 por persona</h6>
+              <br>
+            </div>
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
 
+          <div class="second-row-container">
+            <div class="teams">
+              <h5>Equipo 1:</h5>
+              <br>
+              <h5>Equipo 2:</h5>
+            </div>
+
+            <div class="join">
+              <img src="img/icons/agregar.svg" class="join-icon">
+              UNIRSE
+            </div>
+          </div>
+          <footer class="post-footer">ACA VAN A IR LOS BOTONES DE LIKE Y COMMENT</footer>
+        </div>
 
     <<footer><!-- ACA VA EL FOOTER HECHO EN PHP -->
     </footer>

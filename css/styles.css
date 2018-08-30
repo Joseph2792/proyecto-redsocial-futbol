@@ -2,6 +2,10 @@ body {
 	/* font-family: 'Comic Sans MS'; */
 }
 
+* {
+	box-sizing: border-box;
+}
+
 .characters-home {
 	padding: 15px 0;
 }
@@ -23,6 +27,7 @@ ul {
 .tipodepost-container{
 	background-color: #3f94a1;
 	padding: 15px 0px;
+	border-radius: 5px;
 }
 
 .tipodepost-container a{
@@ -52,4 +57,79 @@ li a i{
 font-size: 25px;
 color: white;
 margin-right: 12px;
+}
+
+.post-container{
+	border: 1px solid #3f94a1;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.post-description{
+	display: flex;
+	flex-direction: row;
+  justify-content: flex-start;
+	align-content: space-evenly;
+	position: relative;
+	overflow: hidden;
+}
+
+.post-description i{
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
+
+.description{
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.event-icon-trophy {
+	width: 70px;
+	height: 40px;
+	top: 15px;
+	left: 5px;
+}
+
+.event-icon-ball {
+	width: 40px;
+	height: 40px;
+	margin-left: 15px;
+	margin-right: 15px;
+	top: 15px;
+	left: 5px;
+}
+
+.second-row-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.teams{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	text-align: left;
+	width: 80%;
+}
+
+.join{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	overflow: hidden;
+	width: 20%;
+	padding: 10px 20px;
+}
+
+.join-icon {
+	width: 50px;
+}
+
+.post-footer{
+	background-color: #3f94a1;
+	color: white;
 }
