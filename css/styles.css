@@ -4,23 +4,52 @@ body{
 	font-size: 16px;
 }
 /**/
-.cont-navLogin{
-	height: 60px;
+header{
+	height: 50px;
+    background-color: #5DBA5E;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.cont-navLogin{	
 	width: 100%;
-	color: #fff;
-	display: flex;
-	padding: 5px;
+    color: #fff;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
 
 }
 
 .cont-logo{
-	height: 100%;
-	width: auto;
+	height: auto;
+	width: 150px;
 }
 .cont-search{
-	
+	border-radius: 5px;
+    background-color: #fff;
+    padding: 5px;
+    min-width: 220px;
+    display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
-@media (min-width: 640px){}
+.cont-search input{
+	border: none;
+	width: 100%;
+    font-size: 12px;
+    font-style: italic;
+    color: #f5f5f5;
+}
+.cont-search input:focus, .cont-search input:active{
+	border: none !important;
+}
+.cont-search i{
+	color: #777;
+
+}
+@media (min-width: 640px){
+
+}
 
 @media (min-width: 960px){}
 
