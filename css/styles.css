@@ -25,29 +25,33 @@ ul {
 }
 
 .tipodepost-container{
+	display: flex;
 	background-color: #3f94a1;
 	padding: 15px 0px;
 	border-radius: 5px;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .tipodepost-container a{
 	color: white;
 	text-decoration: none;
 	text-align: center;
-	width: 33%;
-	padding: 15px;
-	justify-content: space-evenly;
-	}
+}
 
 .tipodepost-container ul{
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	align-content: space-evenly;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	padding: 0px;
+	flex-wrap: wrap;
+	margin: 0;
 }
 
-.tipodepost-container ul li{
+.tipodepost-container i{
+	font-size: 30px;
 	text-align: center;
 	padding-top: auto;
 	padding-bottom: auto;
@@ -76,8 +80,9 @@ margin-right: 12px;
 
 .post-description i{
 	position: absolute;
-	top: 0;
-	right: 10px;
+	top: 5px;
+	right: 20px;
+	color: #2c6087;
 }
 
 .description{
@@ -87,9 +92,9 @@ margin-right: 12px;
 }
 
 .event-icon-trophy {
-	width: 70px;
+	width: 80px;
 	height: 40px;
-	top: 15px;
+	margin-top: 15px;
 	left: 5px;
 }
 
@@ -98,7 +103,7 @@ margin-right: 12px;
 	height: 40px;
 	margin-left: 15px;
 	margin-right: 15px;
-	top: 15px;
+	margin-top: 15px;
 	left: 5px;
 }
 
@@ -122,14 +127,28 @@ margin-right: 12px;
 	align-content: center;
 	overflow: hidden;
 	width: 20%;
-	padding: 10px 20px;
+	padding: 10px 0px;
+	text-align: center;
 }
 
-.join-icon {
-	width: 50px;
+.join i {
+	font-size: 40px;
+	text-align: center;
+	color: #2c6087;
+	display: block;
+}
+
+.join a{
+	display: block;
+	text-decoration: none;
+	color: #3f94a1;
 }
 
 .post-footer{
 	background-color: #3f94a1;
 	color: white;
+	display: flex;
+	flex-direction: row;
+	padding: 10px 30px;
+	font-size: 20px;
 }

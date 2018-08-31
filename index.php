@@ -36,7 +36,7 @@
               <h6>Jueves 23 de agosto, $130 por persona</h6>
               <br>
             </div>
-            <i class="fas fa-ellipsis-h"></i>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
           </div>
 
           <div class="second-row-container">
@@ -47,11 +47,14 @@
             </div>
 
             <div class="join">
-              <img src="img/icons/agregar.svg" class="join-icon">
-              UNIRSE
+              <a href="#"><i class="fas fa-plus-circle"></i>UNIRSE</a>
+
             </div>
           </div>
-          <footer class="post-footer">ACA VAN A IR LOS BOTONES DE LIKE Y COMMENT</footer>
+          <footer class="post-footer">
+            <i class="fas fa-thumbs-up col-1"></i>
+            <i class="fas fa-comment-dots col-1"></i>
+          </footer>
         </div>
 
       </div>
@@ -66,7 +69,7 @@
               <h6>Jueves 23 de agosto, $80 por persona</h6>
               <br>
             </div>
-            <i class="fas fa-ellipsis-h"></i>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
           </div>
 
           <div class="second-row-container">
@@ -77,11 +80,14 @@
             </div>
 
             <div class="join">
-              <img src="img/icons/agregar.svg" class="join-icon">
-              UNIRSE
+              <a href="#"><i class="fas fa-plus-circle"></i>UNIRSE</a>
+
             </div>
           </div>
-          <footer class="post-footer">ACA VAN A IR LOS BOTONES DE LIKE Y COMMENT</footer>
+          <footer class="post-footer">
+            <i class="fas fa-thumbs-up col-1"></i>
+            <i class="fas fa-comment-dots col-1"></i>
+          </footer>
         </div>
 
     <<footer><!-- ACA VA EL FOOTER HECHO EN PHP -->
