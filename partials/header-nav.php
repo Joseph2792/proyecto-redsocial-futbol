@@ -1,3 +1,4 @@
+<!--
 <header class="col-12 fixed-top">
 	<nav class="cont-nav">
 		<div class="cont-logo">
@@ -10,4 +11,4 @@
 			<li><a href=""><i class="fa fa-home"></i></a></li>
 		</ul>
 	</nav>
-</header>
+</header>-->

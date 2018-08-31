@@ -1,7 +1,6 @@
-<!--
 <nav class="cont-navLogin">
     <div class="cont-logo">
-        <img src="../img/logo.svg" alt="logo">
+        <img src="img/logo.svg" alt="logo">
     </div>
     <form action="">
         <div class="cont-search">
@@ -10,4 +9,4 @@
         </div>
     </form>
 
-</nav>-->
+</nav>
