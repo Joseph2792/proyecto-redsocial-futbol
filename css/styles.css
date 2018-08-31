@@ -1,16 +1,28 @@
-body {
+body{
 	/* font-family: 'Comic Sans MS'; */
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-size: 16px;
 }
-
-img {
-	max-width: none;
+/**/
+.cont-navLogin{
+	height: 60px;
 	width: 100%;
+	color: #fff;
+	display: flex;
+	padding: 5px;
+
 }
 
-.characters-home {
-	padding: 15px 0;
+.cont-logo{
+	height: 100%;
+	width: auto;
 }
+.cont-search{
+	
+}
+@media (min-width: 640px){}
 
-.myNavDark {
-	background-color: rgb(10, 54, 91) !important;
-}
+@media (min-width: 960px){}
+
+@media (min-width: 1200px){}
+/**/
