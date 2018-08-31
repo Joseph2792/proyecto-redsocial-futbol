@@ -1,5 +1,5 @@
-<header>
-	<nav>
+<header class="col-12 fixed-top">
+	<nav class="cont-nav">
 		<div class="cont-logo">
             <img src="img/logo.svg" alt="logo">            
         </div>

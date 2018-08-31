@@ -1,3 +1,4 @@
+<!--
 <nav class="cont-navLogin">
     <div class="cont-logo">
         <img src="../img/logo.svg" alt="logo">
@@ -9,4 +10,4 @@
         </div>
     </form>
 
-</nav>
+</nav>-->
