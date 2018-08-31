@@ -3,6 +3,8 @@ body{
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	font-size: 16px;
 }
+
+*
 /**/
 header{
 	height: 50px;
@@ -19,7 +21,6 @@ header{
     justify-content: space-between;
 
 }
-
 .cont-logo{
 	height: auto;
 	width: 150px;
@@ -55,3 +56,11 @@ header{
 
 @media (min-width: 1200px){}
 /**/
+.otro{
+    display: none;
+}
+.cont-logo:hover otro{
+    display: block;
+    background-color: green;
+    color: white;
+}
