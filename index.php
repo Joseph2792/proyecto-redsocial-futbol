@@ -4,9 +4,7 @@
 ?>
     <!--navbar login-->
     <?php require_once "partials/nav-login.php"; ?>
-    <!--navbar-->
-    <?php require_once "partials/header-nav.php"; ?>
-
+    <div class="contenedor">    
     <!--contenido de las secciones: login y registro home, amigos, faq, perfil-->
     <div class="col-ms-12 col-md-12 col-lg-6">
       <div class="tipodepost-container">
@@ -83,6 +81,6 @@
           </footer>
         </div>
     <!--fin del contenido-->
-
+    </div>
     <!--scripts ed jquery y bootstrap-->
     <?php require_once "partials/scripts.php"; ?>
