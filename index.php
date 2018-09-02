@@ -18,7 +18,7 @@
       </div>
     </div>
     <br>
-    puto git
+    puto git / hernan
     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
         <div class="post-container">
           <div class="post-description">
