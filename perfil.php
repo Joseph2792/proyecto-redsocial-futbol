@@ -6,7 +6,65 @@
     <?php require_once "partials/nav-login.php"; ?>
     <div class="contenedor">
     <!--contenido de las secciones: login y registro home, amigos, faq, perfil-->
-    
+    <div class="cont-main-perfil">
+        <section class="cont-foto">
+            <div class="img-portada" style="background-image: url('img/portada.png');">                
+            </div>
+            <img class="photo-profile" src="img/user.jpg" alt="">
+        </section>
+        <section class="cont-datos">
+            <div class="dato">
+                    <span><strong>Nombre:</strong></span>
+                    <span>Jose Alfaro</span>
+            </div>
+            <div class="dato">
+                    <span><strong>Apodo:</strong></span>
+                    <span>Joseph</span> 
+            </div>           
+            <div class="dato">
+                    <span><strong>Fecha de Nacimiento:</strong></span>
+                    <span>Joseph</span>
+            </div>
+            <div class="dato">
+                    <span><strong>Correo:</strong></span>
+                    <span>jose.handerson@gmail.com</span>
+            </div>
+            <div class="dato">
+                    <span><strong>Estado:</strong></span>
+                    <span>Soltero</span>
+            </div>
+            <div class="dato">
+                    <span><strong>Sexo:</strong></span>
+                    <span>Masculino</span>
+            </div>
+        </section>
+        <section class="cont-datos">
+                <div class="dato">
+                        <span><strong>Torneos jugados:</strong></span>
+                        <span>5</span>
+                </div>        
+                <div class="dato">
+                        <span><strong>Pertidos jugados:</strong></span>
+                        <span>30</span>            
+                </div>
+                <div class="dato">
+                        <span><strong>Cantidad de post:</strong></span>
+                        <span>100</span>
+                </div>
+                <div class="dato">
+                        <span><strong>Amigos:</strong></span>
+                        <span>263</span>
+                </div>
+                <div class="dato">
+                        <span><strong>Valoracion:</strong></span>
+                        <span>Excelente</span>
+                </div>
+                <div class="dato">
+                        <span><strong>Deporte:</strong></span>
+                        <span>Futbol</span>
+                </div>
+            </section>
+    </div>
     <!--fin del contenido-->
       <div class="chat col-3">
         <div class="messages">
