@@ -73,14 +73,15 @@
                 </div>
         </section>
     <!--fin del contenido-->
-        <div class="chat col-3">
-                <div class="messages">
-                        <a href="#"><i class="fas fa-circle"></i>
-                        Mensajes (2)
-                        </a>
-                </div>
-                <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+    <section>
+      <div class="chat col-3">
+        <div class="messages col-3">
+            <a href="#"><i class="fas fa-circle"></i>Mensajes (2)</a>
+	    <a href="#"><i class="fas fa-ellipsis-h" title="Opciones"></i></a>
         </div>
+
+      </div>
+    </section>
     </div>
     <!--scripts ed jquery y bootstrap-->
     <?php require_once "partials/scripts.php"; ?>

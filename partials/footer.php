@@ -1,3 +1,4 @@
 <footer>
-	<h5>Copyright 2018</h5>
+	<span>© Copyright 2018 - PlayGroups</span>
+	<span>Proyecto Digital House</span>
 </footer>
