@@ -4,76 +4,83 @@
 ?>
     <!--navbar-->
     <?php require_once "partials/nav-login.php"; ?>
-    <div class="contenedor">
+    <div class="contenedor container">
     <!--contenido de las secciones: login y registro home, amigos, faq, perfil-->
-    <div class="cont-main-perfil">
-        <section class="cont-foto">
-            <div class="img-portada" style="background-image: url('img/portada.png');">                
-            </div>
-            <img class="photo-profile" src="img/user.jpg" alt="">
+        <section class="cont-perfil row">
+                <div class="cont-foto col-12">
+                        <div class="img-portada" style="background-image: url('img/portada.jpg');">                
+                        </div>
+                        <img class="photo-profile" src="img/man.jpg" alt="">
+                </div>
         </section>
-        <section class="cont-datos">
-            <div class="dato">
-                    <span><strong>Nombre:</strong></span>
-                    <span>Jose Alfaro</span>
-            </div>
-            <div class="dato">
-                    <span><strong>Apodo:</strong></span>
-                    <span>Joseph</span> 
-            </div>           
-            <div class="dato">
-                    <span><strong>Fecha de Nacimiento:</strong></span>
-                    <span>Joseph</span>
-            </div>
-            <div class="dato">
-                    <span><strong>Correo:</strong></span>
-                    <span>jose.handerson@gmail.com</span>
-            </div>
-            <div class="dato">
-                    <span><strong>Estado:</strong></span>
-                    <span>Soltero</span>
-            </div>
-            <div class="dato">
-                    <span><strong>Sexo:</strong></span>
-                    <span>Masculino</span>
-            </div>
+        <section class="row">
+                <div class="col-sm-12 col-md-6">
+                        <div class="cont-datos">
+                                <div class="dato">
+                                        <span><strong>Nombre:</strong></span>
+                                        <span>Jose Alfaro</span>
+                                </div>
+                                <div class="dato">
+                                        <span><strong>Apodo:</strong></span>
+                                        <span>Joseph</span> 
+                                </div>           
+                                <div class="dato">
+                                        <span><strong>Fecha de Nac:</strong></span>
+                                        <span>27/05/1992</span>
+                                </div>
+                                <div class="dato">
+                                        <span><strong>Correo:</strong></span>
+                                        <span>joseph@gmail.com</span>
+                                </div>
+                                <div class="dato">
+                                        <span><strong>Estado:</strong></span>
+                                        <span>Soltero</span>
+                                </div>
+                                <div class="dato">
+                                        <span><strong>Sexo:</strong></span>
+                                        <span>Masculino</span>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                        <div class="cont-datos">
+                                <div class="dato">
+                                        <span><strong>Torneos jugados:</strong></span>
+                                        <span>5</span>
+                                </div>        
+                                <div class="dato">
+                                        <span><strong>Pertidos jugados:</strong></span>
+                                        <span>30</span>            
+                                </div>
+                                <div class="dato">
+                                        <span><strong>Cantidad de post:</strong></span>
+                                        <span>100</span>
+                                </div>
+                                <div class="dato">
+                                        <span><strong>Amigos:</strong></span>
+                                        <span>263</span>
+                                </div>
+                                <div class="dato">
+                                        <span><strong>Valoracion:</strong></span>
+                                        <span>Excelente</span>
+                                </div>
+                                <div class="dato">
+                                        <span><strong>Deporte:</strong></span>
+                                        <span>Futbol</span>
+                                </div>
+                        </div>
+                </div>
         </section>
-        <section class="cont-datos">
-                <div class="dato">
-                        <span><strong>Torneos jugados:</strong></span>
-                        <span>5</span>
-                </div>        
-                <div class="dato">
-                        <span><strong>Pertidos jugados:</strong></span>
-                        <span>30</span>            
-                </div>
-                <div class="dato">
-                        <span><strong>Cantidad de post:</strong></span>
-                        <span>100</span>
-                </div>
-                <div class="dato">
-                        <span><strong>Amigos:</strong></span>
-                        <span>263</span>
-                </div>
-                <div class="dato">
-                        <span><strong>Valoracion:</strong></span>
-                        <span>Excelente</span>
-                </div>
-                <div class="dato">
-                        <span><strong>Deporte:</strong></span>
-                        <span>Futbol</span>
-                </div>
-            </section>
-    </div>
     <!--fin del contenido-->
-      <div class="chat col-3">
-        <div class="messages">
-            <a href="#"><i class="fas fa-circle"></i>
-              Mensajes (2)
-            </a>
+        <div class="chat col-3">
+                <div class="messages">
+                        <a href="#"><i class="fas fa-circle"></i>
+                        Mensajes (2)
+                        </a>
+                </div>
+                <a href="#"><i class="fas fa-ellipsis-h"></i></a>
         </div>
-        <a href="#"><i class="fas fa-ellipsis-h"></i></a>
-      </div>
     </div>
     <!--scripts ed jquery y bootstrap-->
     <?php require_once "partials/scripts.php"; ?>

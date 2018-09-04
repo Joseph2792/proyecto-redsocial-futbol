@@ -298,25 +298,29 @@ margin-right: 12px;
 	color: #3f94a1;
 }
 
+/*----------break points-------------------*/
+@media (min-width: 640px){}
 @media (min-width: 768px){
-.chat{
-	position: fixed;
-	bottom: 0;
-	right: 10px;
-	background-color: #5dba5e;
-	color: white;
-	padding: 5px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
+	.chat{
+		position: fixed;
+		bottom: 0;
+		right: 10px;
+		background-color: #5dba5e;
+		color: white;
+		padding: 5px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
 
-.chat i{
-	color: #2c6087;
-}
+	.chat i{
+		color: #2c6087;
+	}
 
-.messages a{
-	text-decoration: none;
-	color: white;
+	.messages a{
+		text-decoration: none;
+		color: white;
+	}
 }
-}
+@media (min-width: 960px){}
+@media (min-width: 1200px){}
