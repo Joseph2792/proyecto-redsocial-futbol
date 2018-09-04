@@ -9,5 +9,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/estiloJose.css">
+    <link rel="stylesheet" href="css/estilosJavier.css">
 </head>
 <body>
