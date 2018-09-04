@@ -4,6 +4,7 @@
     /*background: rgba(0, 0, 0, 0.1);*/
     margin-top: 15px;
     padding: 20px;
+    min-width: 312px;
 }
 .cont-perfil{
     position: relative;
@@ -33,6 +34,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
+    min-width: 312px;
 }
 .photo-profile{
     width: 150px;
@@ -44,6 +46,18 @@
     left: 35%;
 }
 
-@media (min-width: 640px){}
-@media (min-width: 960px){}
-@media (min-width: 1200px){}
+@media (min-width: 768px){
+    .photo-profile{
+        left: 39%;
+    }
+}
+@media (min-width: 990px) { 
+    .photo-profile{
+        left: 42%;
+    }
+}
+@media (min-width: 1200px) { 
+    .photo-profile{
+        left: 43%;
+    }
+}
