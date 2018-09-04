@@ -7,7 +7,7 @@
     <div class="contenedor">
     <!--contenido de las secciones: login y registro home, amigos, faq, perfil-->
     <div class="cont-main-FAQ">
-        <section class="col-12">
+        <section class="col-sm-12 col-md-6">
             <h1>¿Necesitas Ayuda?</h1>
             <div>
                 <form action="get">
