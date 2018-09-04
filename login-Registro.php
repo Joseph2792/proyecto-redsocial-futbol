@@ -36,7 +36,7 @@
 			</section>
 			<section class="flexregistry">
 				<form action="/.php" method="post" enctype="multipart/form-data">
-					<h2>Aún no tenes una cuenta?</h2>
+					<span>Aún no tenes una cuenta?</span>
 					<h2>Registrate</h2>
 
           <div class="formlogin-control">
@@ -75,12 +75,12 @@
               <option value="Py">Paraguay</option>
             </select>
           </div>
-
-					<div class="formlogin-control">
+            <!--
+		  <div class="formlogin-control">
             <label for="fanclub">De que cuadro sos?</label>
             <input type="text" value="" placeholder="">
           </div>
-
+-->
 		
 				</form>
 			</section>

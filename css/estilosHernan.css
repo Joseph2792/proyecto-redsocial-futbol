@@ -1,16 +1,14 @@
 /*aca podras poner tus estilos de las secciones*/
 .container-main {
+  padding-top: 50px;
   height: 100vh;
-  padding: 10px;
-  margin-top: 50px;
-  margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
-background-image:url(../img/balonfutbol.jpg);*/ Rompe la imagen
-  background-color:white;
-  background-size:contain;
+  background-image: url(../img/balonfutbol.jpg);
+  background-color: white;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -93,9 +91,7 @@ background-image:url(../img/balonfutbol.jpg);*/ Rompe la imagen
 }
 
 .flexlogin h2{
-  display: flex;
   width: 100%;
-  margin: 10px;
   padding: 20px;
 }
 
@@ -105,9 +101,9 @@ background-image:url(../img/balonfutbol.jpg);*/ Rompe la imagen
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin: 10px auto;
   display: flex;
-  margin-left: 30px;
+  border: none;
 }
 
 
