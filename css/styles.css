@@ -65,9 +65,12 @@ header{
 .cont-search input:focus, .cont-search input:active{
 	border: none !important;
 }
+.cont-search button{
+	background: none;
+	border: none;
+}
 .cont-search button i{
 	color: #777;
-
 }
 
 /* inicio estilos de la home */

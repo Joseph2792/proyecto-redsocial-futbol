@@ -10,5 +10,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/estiloJose.css">
     <link rel="stylesheet" href="css/estilosJavier.css">
+    <link rel="stylesheet" href="css/estilosHernan.css">
 </head>
 <body>
