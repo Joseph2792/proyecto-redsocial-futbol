@@ -30,6 +30,7 @@ header{
 .cont-logo{
 	height: auto;
 	width: 150px;
+	margin-top: 5px;
 }
 .cont-nav{
 	display: flex;
@@ -39,6 +40,7 @@ header{
 }
 .cont-nav .cont-iconos{
 	margin-right: 10px;
+	display: none;
 }
 .cont-iconos a{
 	text-decoration: none;
@@ -316,7 +318,11 @@ footer{
 }
 
 /*----------break points-------------------*/
-@media (min-width: 640px){}
+@media (min-width: 640px){
+	.cont-nav .cont-iconos{
+		display: block;
+	}
+}
 @media (min-width: 768px){
 
 .chat{

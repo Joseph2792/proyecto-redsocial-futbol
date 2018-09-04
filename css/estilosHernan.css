@@ -1,7 +1,6 @@
 /*aca podras poner tus estilos de las secciones*/
 .container-main {
   padding-top: 50px;
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -113,8 +112,16 @@
 border: 5px solid red;
 
 }
+@media (min-width: 800px){
+  .container-main{
+    height: 100vh;
+  }
+}
 
 @media (min-width: 640px){
+  .container-main{
+    height: 100vh;
+  }
   .containermain-flex{
     display: flex;
     flex-wrap: wrap;
