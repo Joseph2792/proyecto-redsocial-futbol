@@ -264,6 +264,7 @@ margin-right: 12px;
 	border: solid 1px #3f94a1;
 	border-radius: 5px;
 	padding: 5px;
+	margin-bottom: 10px
 }
 .cont-search-faq input{
 	border: none;
@@ -300,6 +301,13 @@ margin-right: 12px;
 
 .card-body{
 	color: #3f94a1;
+}
+
+.paginado-faq{
+	margin-top: 10px;
+}
+.page-link{
+	color: #3f94a1 !important;
 }
 /*----------estilos del footer------------*/
 footer{

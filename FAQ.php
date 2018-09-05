@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div aria-label="Page navigation example">
+            <div class="paginado-faq" aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1">Previous</a>
