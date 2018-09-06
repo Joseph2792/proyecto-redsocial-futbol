@@ -78,7 +78,8 @@
                     <label for="fanclub">De que cuadro sos?</label>
                     <input type="text" value="" placeholder="">
                 </div>
-                -->		
+                -->
+								<input class="submit" type="submit" value="Registrate"/>
             </form>
         </section>
     </div>
