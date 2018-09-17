@@ -45,7 +45,24 @@
     position: absolute;
     left: 35%;
 }
+/*------------------------------*/
+.cont-friend{
+    width: 100%;
+    padding: 15px;
+}
+.card-friend{
+    border: 1px solid #3f94a1;
+    border-radius: 10px;
+}
+.photo-friend{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
 
+
+/*-------------------------------*/
 @media (min-width: 768px){
     .photo-profile{
         left: 39%;
