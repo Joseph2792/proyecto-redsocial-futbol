@@ -245,7 +245,7 @@ margin-right: 12px;
 	display: none;
 }
 
-/* ESTILOS PARA EL FAQ */
+/*-------------- ESTILOS PARA EL FAQ ---------------*/
 .cont-main-FAQ section{
 	margin: auto;
 }
@@ -258,7 +258,7 @@ margin-right: 12px;
 	background-color: #3f94a1;
 }
 
-.cont-search-faq {
+.cont-search-faq, .cont-search-input {
 	display: flex;
 	justify-content: space-between;
 	border: solid 1px #3f94a1;
@@ -266,13 +266,14 @@ margin-right: 12px;
 	padding: 5px;
 	margin-bottom: 10px
 }
-.cont-search-faq input{
+.cont-search-faq input, .cont-search-input input{
 	border: none;
 	width: 90%;
 }
-.cont-search-faq i{
+.cont-search-faq i, .cont-search-input i{
 	font-size: 20px;
 	margin-right: 5px;
+	color: #777;
 }
 .btn-container{
 	padding: 0;

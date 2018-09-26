@@ -46,7 +46,21 @@
     left: 35%;
 }
 /*------------------------------*/
-.row .cont-friends ul{
+.cont-search-friends{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.cont-search-input{
+    min-width: 250px;
+    font-size: 0.8em;
+}
+.cont-search-input button{
+    background: none;
+    border: none;
+}
+.cont-friends ul{
     padding: 0px !important;
 }
 .cont-friend{
@@ -61,20 +75,25 @@
 .card-friend{
     border: 1px solid #3f94a1;
     border-radius: 10px;
-}
-.cont-photo-friend{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 40%;
-    background-color: #3f94a1;
-    color: #fff;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.cont-photo-friend{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 40%;
+  background-color: #3f94a1;
+  color: #fff;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
 }
 .photo-friend{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 5px solid #fff;
 }
 .cont-info-friend{
     width: 60%;
@@ -89,19 +108,34 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
+.cont-star a i{
+    color: #3f94a1;
+    font-size: 0.9em;
+    margin: 0px;
+}
+.msj-friend{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.msj-friend a i{
+  color: #3f94a1;
+  margin: 10px 0 0 0;
+}
 /*-------------------------------*/
 @media (min-width: 768px){
     .photo-profile{
         left: 39%;
     }
 }
-@media (min-width: 990px) { 
+@media (min-width: 990px) {
     .photo-profile{
         left: 42%;
     }
 }
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
     .photo-profile{
         left: 43%;
     }
