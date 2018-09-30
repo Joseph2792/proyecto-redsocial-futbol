@@ -1,5 +1,50 @@
 <header class="col-12 fixed-top">
-    <nav class="cont-navLogin">
+    <nav id="nav-mobile" class="cont-navLogin navbar navbar-expand-lg navbar-light">
+        <div class="cont-logo">
+            <img src="img/logo.svg" alt="logo">           
+        </div>
+        <form action="get">
+            <div class="cont-search">
+                <input type="search" placeholder="Buscar grupos o personas..." name="q" id="buscadorNav">
+                <button class="" type="submit">
+                    <i class="fa fa-search icon"></i>
+                </button>                    
+            </div>
+        </form>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse cont-nav-mobile" id="navMobile">
+            <div class="cont-icon-nav">
+                <a class="ico-nav" href="perfil.php" title="Mi Perfil">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Jose Alfaro</span>
+                </a> 
+                <a class="ico-nav" href="index.php" title="Home">
+                    <i class="fa fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a class="ico-nav" href="time-line.php" title="Mis Publicaciones">
+                    <i class="fa fa-user"></i>
+                    <span>Mis Post</span>
+                </a>
+                <a class="ico-nav" href="listado-amigos.php" title="Mis Amigos">
+                    <i class="fas fa-users"></i>
+                    <span>Amigos</span>
+                </a>
+                <a class="ico-nav" href="login-Registro.php" title="Login">
+                    <i class="fa fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+                                            
+                <a class="ico-nav" href="FAQ.php" data-toggle="tooltip" data-placement="bottom" title="Preguntas Frecuentes">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <nav id="nav-desk" class="cont-navLogin">
         <div class="cont-logo">
             <img src="img/logo.svg" alt="logo">           
         </div>
@@ -24,9 +69,7 @@
                                                
                 <a class="ico-nav" href="FAQ.php" data-toggle="tooltip" data-placement="bottom" title="Preguntas Frecuentes">
                     <i class="fa fa-question-circle"></i>
-                </a>
-                
-                        
+                </a>           
             <form action="get">
                 <div class="cont-search">
                     <input type="search" placeholder="Buscar grupos o personas..." name="q" id="buscadorNav">
@@ -41,6 +84,5 @@
                 </a> 
             </div>
         </div>
-        
     </nav>
 </header>

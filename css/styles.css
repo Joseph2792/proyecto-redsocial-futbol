@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 }
+
 body{
 	/* font-family: 'Comic Sans MS'; */
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -18,11 +19,28 @@ header{
     flex-wrap: wrap;
     align-items: center;
 }
-
+#nav-desk{
+	display: none;
+}
+#nav-mobile{
+	display: flex;
+}
+.cont-nav-mobile{
+	position: relative;
+}
+.cont-icon-nav{
+	display: flex;
+	flex-direction: column;
+    position: absolute;
+    right: 0px;
+    background: rgba(0,0,0, 0.5);
+    width: 200px;
+    padding: 10px;
+    height: auto;
+}
 .cont-navLogin{
 	width: 100%;
     color: #fff;
-    display: flex;
     padding: 5px;
     justify-content: space-between;
 
@@ -47,7 +65,7 @@ header{
 	margin-right: 10px;
 	display: none;
 }
-.cont-iconos a{
+.cont-iconos a, .cont-icon-nav a{
 	text-decoration: none;
 	color: white;
 	font-size: 25px;
@@ -56,7 +74,7 @@ header{
     align-items: center;
     margin: 0 5px;
 }
-.cont-iconos span{
+.cont-iconos span, .cont-icon-nav span{
 	font-size: 11px;
 }
 .cont-search{
@@ -342,8 +360,15 @@ footer{
 	.cont-nav .cont-iconos{
 		display: flex;
 	}
+	
 }
 @media (min-width: 768px){
+	#nav-mobile{
+		display: none;
+	}
+	#nav-desk{
+		display: flex;
+	}
 
 .chat{
 	display: flex;

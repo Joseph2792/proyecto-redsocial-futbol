@@ -62,6 +62,9 @@
 }
 .cont-friends ul{
     padding: 0px !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 .cont-friend{
     width: 100%;
@@ -124,7 +127,72 @@
   color: #3f94a1;
   margin: 10px 0 0 0;
 }
+/*--------------------------------*/
+.msn{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    width: 50px;
+    height: 50px;
+    background-color: #5DBA5E;
+    color: white;
+    border-radius: 50%;
+    padding: 2px;
+    position: fixed;
+    bottom:20px;
+    right: 10px;
+}
+.msn a{
+    position: absolute;
+    color: white;
+    left: 29%;
+    top: 22%;
+    font-size: 20px;
+}
+
+.numb{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: -8px;
+}
 /*-------------------------------*/
+@media (min-width: 640px){
+    .cont-friend {
+        width: 200px;
+        min-width: 200px;
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .cont-photo-friend {
+        display: flex;
+        width: 100%;
+        flex-wrap:nowrap;
+        justify-content: center;
+        height: 50%;
+        background-color: #3f94a1;
+        color: #fff;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .cont-info-friend {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+}
 @media (min-width: 768px){
     .photo-profile{
         left: 39%;
