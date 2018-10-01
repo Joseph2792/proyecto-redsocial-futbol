@@ -1,7 +1,7 @@
 .cont-datos{
     border: 1px solid #3f94a1;
     border-radius: 5px;
-    /*background: rgba(0, 0, 0, 0.1);*/
+    background:#fff;
     margin-top: 15px;
     padding: 20px;
     min-width: 312px;
@@ -82,6 +82,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
+    background-color: #fff;
 }
 .cont-photo-friend{
   display: flex;
