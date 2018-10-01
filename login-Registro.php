@@ -1,6 +1,27 @@
 <?php
 	$pageTitle = "Login";
 	include "partials/head.php";
+
+	require_once 'register-controller.php';
+
+	if ( isLogged() ) {
+	header('location: profile.php');
+	exit;
+}
+
+	$registerFullName = isset($_POST['registerFullName']) ? trim($_POST['registerFullName']) : '';
+	$registerEmail = isset($_POST['registerEmail']) ? trim($_POST['registerEmail']) : '';
+	$registerCountry = isset($_POST['registerCountry']) ? trim($_POST['registerCountry']) : '';
+	$errors = [];
+	if ($_POST) {
+		$errors = registerValidate($_POST, $_FILES);
+		if ( count($errors) == 0 ) {
+			$imageName = saveImage($_FILES['registerAvatar']);
+			$_POST['avatar'] = $imageName;
+			$user = saveUser($_POST);
+			logIn($user);
+		}
+	}
 ?>
     <!--navbar-->
     <?php require_once "partials/nav-login.php"; ?>
@@ -33,28 +54,35 @@
 			  </form>
 			</section>
         </section>
+
+				<!--fFORMULARIO DE REGISTRO-->
+
         <section class="flexregistry">
-            <form action="/.php" method="post" enctype="multipart/form-data">
+            <form action="register-controller.php" method="post" enctype="multipart/form-data">
                 <span>Aún no tenes una cuenta?</span>
                 <h2>Registrate</h2>
                 <div class="formlogin-control">
                     <label for="Fullname">Nombre y Apellido</label>
-                    <input type="text" name="" value="" placeholder="Fullmane">
+                    <input type="text" name="registerFullName" value="<?= $registerFullName; ?>" placeholder="Fullmane" <?= isset($errors['fullName']) ? 'is-invalid' : ''; ?>">
+
+										<?php if (isset($errors['fullName'])): ?>
+												<?= $errors['fullName'] ?>
+												<?php endif; ?>
                 </div>
 
                 <div class="formlogin-control">
                     <label for="newUsername">Usuario</label>
-                    <input type="text" name="" value="" placeholder="Username">
+                    <input type="text" name="registerNickname" value="" placeholder="Username">
                 </div>
 
                 <div class="formlogin-control">
                     <label for="Email">Email</label>
-                    <input type="email" name="" value="" placeholder="@email.com">
+                    <input type="email" name="registerEmail" value="" placeholder="@email.com">
                 </div>
 
                 <div class="formlogin-control">
                     <label for="password">Contraseña</label>
-                    <input type="password" name="" value="" placeholder="Password">
+                    <input type="password" name="registerPassword" value="" placeholder="Password">
                 </div>
 
                 <div class="formlogin-control">
@@ -73,12 +101,15 @@
                     <option value="Py">Paraguay</option>
                     </select>
                 </div>
-                <!--
+								<div class="formlogin-control">
+									<label for="registerAvatar">Imagen de Perfil:</label>
+									<input type="file" name="registerAvatar" value="">
+								</div>
+
                 <div class="formlogin-control">
-                    <label for="fanclub">De que cuadro sos?</label>
-                    <input type="text" value="" placeholder="">
+                    <input class="submit" type="submit" value="Registrate"/><br>
                 </div>
-                -->		
+
             </form>
         </section>
     </div>
