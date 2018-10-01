@@ -6,6 +6,7 @@ body{
 	/* font-family: 'Comic Sans MS'; */
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	font-size: 16px;
+	background-color: #e4e4e4;
 }
 .contenedor{
 	margin-top: 50px;
@@ -32,10 +33,10 @@ header{
 	display: flex;
 	flex-direction: column;
     position: absolute;
-    right: 0px;
-    background: rgba(0,0,0, 0.5);
+	right: 0px;
+	top: 5px;
+    background: rgba(0,0,0, 0.8);
     width: 200px;
-    padding: 10px;
     height: auto;
 }
 .cont-navLogin{
@@ -45,10 +46,13 @@ header{
     justify-content: space-between;
 
 }
-.cont-logo{
+.cont-logo-mobile, .cont-logo{
 	height: auto;
-	width: 150px;
+	width: 100px;
 	margin-top: 5px;
+}
+.cont-logo{
+	width: 150px;
 }
 .cont-nav{
 	display: flex;
@@ -59,7 +63,8 @@ header{
 .cont-iconos{
 	display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+	justify-content: space-evenly;
+	align-items: center;
 }
 .cont-nav .cont-iconos{
 	margin-right: 10px;
@@ -74,33 +79,62 @@ header{
     align-items: center;
     margin: 0 5px;
 }
+
+.user-photo-nav{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.user-photo-navdesk{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+.cont-icon-nav a{
+	padding: 5px 0px;
+	margin: 0px;
+}
+.cont-icon-nav a:hover{
+	background-color: #3f94a1;
+
+}
 .cont-iconos span, .cont-icon-nav span{
 	font-size: 11px;
 }
-.cont-search{
+.cont-search, .cont-search-mobile{
 	border-radius: 5px;
     background-color: #fff;
     padding: 5px;
-    min-width: 220px;
+    min-width: 180px;
     display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin: 0 10px;
 }
-.cont-search input{
+.cont-search-mobile{
+	min-width: 165px;
+	height: 30px;
+}
+.cont-search input, .cont-search-mobile input{
 	border: none;
 	width: 100%;
     font-size: 12px;
     font-style: italic;
     color: #f5f5f5;
 }
-.cont-search input:focus, .cont-search input:active{
+.cont-search input:focus, 
+.cont-search input:active,
+.cont-search-mobile input:focus,
+.cont-search-mobile input:active{
 	border: none !important;
 }
-.cont-search button{
+.cont-search button,
+.cont-search-mobile button{
 	background: none;
 	border: none;
 }
-.cont-search button i{
+.cont-search button i,
+.cont-search-mobile button i{
 	color: #777;
 }
 
@@ -158,6 +192,7 @@ margin-right: 12px;
 	border-radius: 5px;
 	overflow: hidden;
 	flex-wrap: wrap;
+	background-color: #fff;
 }
 
 .post-description{

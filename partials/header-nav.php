@@ -34,6 +34,7 @@
         </a>
       </li>
       <li class="nav-item">
+      
         <a class="nav-link ico-nav" href="FAQ.php" title="Preguntas Frecuentes">
             <i class="fa fa-question-circle"></i>
             <span>Preguntas Frecuentes</span>
