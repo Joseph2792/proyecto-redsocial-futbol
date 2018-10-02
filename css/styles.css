@@ -393,7 +393,7 @@ footer{
 /*----------break points-------------------*/
 .invalid-feedback{
 	color: white !important;
-	background: red !important;
+	background: #dc3545!important;
 	border-radius: 5px !important;
 	padding: 3px 0 !important;
 }

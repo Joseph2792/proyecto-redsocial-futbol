@@ -39,6 +39,7 @@
 }
 
 .flexregistry{
+  width: 60%;
   border:none;
   margin: 10px;
   padding: 10px;
@@ -56,11 +57,13 @@
   display: flex;
   flex-wrap: wrap;
   border: none;
-  margin: 10px;
-  opacity: 0.5;
-  overflow: hidden;
+  opacity: 0.9;
+  margin-bottom: 5px;
 }
-
+.cont-btn-register{
+  margin-top: 10px;
+  float: right;
+}
 .formlogin-control input{
   width: 100%;
   margin: 0px;
