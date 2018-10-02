@@ -1,11 +1,17 @@
     <?php
+        // llamamos a las funciones controladoras
+        require_once 'register-controller.php';
+
+        if ( isLogged() ) {
+            header('location: index.php');
+            exit;
+        }
+        
         $pageTitle = "Login";
         include "partials/head.php";
 
         // Persistencia de datos
-        $userEmail = isset($_POST['userEmail']) ? trim($_POST['userEmail']) : '';
-        $userFullName = isset($_POST['userFullName']) ? trim($_POST['userFullName']) : '';
-        $userCountry = isset($_POST['userCountry']) ? trim($_POST['userCountry']) : '';
+        $userEmail = isset($_POST['email']) ? trim($_POST['email']) : '';
         
         $errors = []; //crea el array de errores a mostrar en los campos
         if ($_POST) {
@@ -24,19 +30,6 @@
     ?>
     <!--navbar-->
     <?php 
-    $countries = [
-		'ar' => 'Argentina',
-		'bo' => 'Bolivia',
-		'br' => 'Brasil',
-		'co' => 'Colombia',
-		'cl' => 'Chile',
-		'ec' => 'Ecuador',
-		'pa' => 'Paraguay',
-		'pe' => 'Perú',
-		'uy' => 'Uruguay',
-		've' => 'Venezuela',
-	];
-    
         require_once "partials/nav-login.php"; 
     ?>
 
@@ -49,8 +42,8 @@
                       
                       <div class="formlogin-control">
                         <input 
-                            <?= isset($errors['email']) ? 'is-invalid' : ''; ?>
-                            type="text" name="email" placeholder="Email" value=""
+                            class="form-control  <?= isset($errors['email']) ? 'is-invalid' : ''; ?>"
+                            type="text" name="email" placeholder="Email" value="<?= $userEmail?>"
                         >
                         <?php if (isset($errors['email'])): ?>
                             <div class="invalid-feedback">
@@ -61,7 +54,7 @@
                       
                       <div class="formlogin-control">
                         <input 
-                        class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+                            class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
                             name="password" placeholder="Password" type="password"
                         >
                         <?php if (isset($errors['password'])): ?>
@@ -75,18 +68,24 @@
 			            <label for="remember">
 			            <input checked='' name="remember" type="checkbox"/>
 			            Recordar password.</label>
-			          </div>
+			          </div>                     
 
-			            <input class="submit" type="submit" value="Ingresar"/><br>
+			          <input class="submit" type="submit" value="Ingresar"/><br>
+                      <a class="forgotPass" href='#'>Olvidaste tu contraseña?</a><br>
 
 			          <button class="btnFb">Conectarse con Facebook</button>
 
-			            <a class="forgotPass" href='#'>Olvidaste tu contraseña?</a>
+			          <a class="forgotPass" href='#' onClick="mostrarRegistro()">Ir a Registrarme</a>
 			  </form>
 			</section>
         </section>
+        <script>
+            function mostrarRegistro(){
+                $("#registro").toggle();
+            }
+        </script>
 
-        <section class="flexregistry">
+        <section id="registro" class="flexregistry" style="display: none;">
             <form action="" method="post" enctype="multipart/form-data">
                 <span>Aún no tenes una cuenta?</span>
                 <h2>Registrate</h2>

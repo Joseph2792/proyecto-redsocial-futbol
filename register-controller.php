@@ -162,8 +162,8 @@
 	function loginValidate($formData) {
 		$errors = [];
 
-		$email = trim($formData['userEmail']);
-		$password = trim($formData['userPassword']);
+		$email = trim($formData['email']);
+		$password = trim($formData['password']);
 
 		if ( empty($email) ) {
 			$errors['email'] = 'Ingresá un correo electrónico';
@@ -203,7 +203,7 @@
 		unset($user['id']);
 		unset($user['password']);
 		$_SESSION['user'] = $user;
-		header('location: profile.php');
+		header('location: index.php');
 		exit;
 	}
 
