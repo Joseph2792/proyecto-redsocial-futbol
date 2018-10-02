@@ -105,6 +105,7 @@ function postValidateTorneo($formData) {
   return $errors;
 }
 
+<<<<<<< HEAD
 // CREAR NUEVO POSTEO
   // PARTIDO
 function postPartidoCreator($data){
@@ -181,4 +182,13 @@ function savePostTorneo($dataDePost){
 
   return $finalPostTorneo;
 }
+=======
+// Función Guardar Datos (Falta aclarar donde se va guardar )
+function saveData($dataDePost){
+		$finalData = userCreator($dataDePost);
+		$dataInJsonFormat = json_encode($finalData);
+		file_put_contents(/*'donde/seguarda.json'*/, $dataInJsonFormat . PHP_EOL, FILE_APPEND);
+		return $finalData;
+	}
+>>>>>>> f50edda51c5adbeff3fb315981b671197adb2e3e
 ?>
