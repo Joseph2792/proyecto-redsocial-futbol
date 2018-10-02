@@ -1,22 +1,12 @@
 <?php
 	require_once 'config.php';
-<<<<<<< HEAD
 	session_start();
-=======
-
-	session_start();
-
->>>>>>> correcciones
 	if ( isset($_COOKIE['userLogged'] ) ) {
 		$user = getUserByEmail($_COOKIE['userLogged']);
 		unset($user['id']);
 		unset($user['password']);
 		$_SESSION['user'] = $user;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> correcciones
 	// function myDebug
 	function myDebug($dato, $type = NULL) {
 		echo "<pre>";
@@ -34,7 +24,6 @@
 		echo "</pre>";
 		exit;
 	}
-<<<<<<< HEAD
 	// Validar el Register
 	function registerValidate($formData, $files) {
 		$errors = [];
@@ -45,43 +34,20 @@
 		$rePassword = trim($formData['registerRePassword']);
 		$country = trim($formData['registerCountry']);
 		$avatar = $files['registerAvatar'];
-=======
-
-	// Validar el Register
-	function registerValidate($formData, $files) {
-		$errors = [];
-
-		$name = trim($formData['userFullName']);
-		$email = trim($formData['userEmail']);
-		$password = trim($formData['userPassword']);
-		$rePassword = trim($formData['userRePassword']);
-		$country = trim($formData['userCountry']);
-		$avatar = $files['userAvatar'];
->>>>>>> correcciones
 
 		if ( empty($name) ) {
 			$errors['fullName'] = 'Escribí tu nombre completo';
 		}
-<<<<<<< HEAD
     if ( empty($nickname) ) {
       $errors['nickname'] = 'Escribí tu nombre de Usuario';
     }
 		if ( empty($email) ) {
-			$errors['Email'] = 'Escribí tu correo electrónico';
-=======
-
-		if ( empty($email) ) {
 			$errors['email'] = 'Escribí tu correo electrónico';
->>>>>>> correcciones
 		} else if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
 			$errors['email'] = 'Escribí un correo válido';
 		} else if ( emailExist($email) ) {
 			$errors['email'] = 'Ese email ya fue registrado';
 		}
-<<<<<<< HEAD
-=======
-
->>>>>>> correcciones
 		if ( empty($password) || empty($rePassword) ) {
 			$errors['password'] = 'La contraseña no puede estar vacía';
 		} elseif ( $password != $rePassword) {
@@ -89,17 +55,9 @@
 		} elseif ( strlen($password) < 4 || strlen($rePassword) < 4 ) {
 			$errors['password'] = 'La contraseña debe tener más de 4 caracteres';
 		}
-<<<<<<< HEAD
 		if ( empty($country) ) {
 			$errors['country'] = 'Elegí un país';
 		}
-=======
-
-		if ( empty($country) ) {
-			$errors['country'] = 'Elegí un país';
-		}
-
->>>>>>> correcciones
 		if ( $avatar['error'] !== UPLOAD_ERR_OK ) {
 			$errors['image'] = 'Ché subite una imagen';
 		} else {
@@ -108,30 +66,19 @@
 				$errors['image'] = 'Formato de imagen no permitido';
 			}
 		}
-<<<<<<< HEAD
 		return $errors;
 	}
-=======
-
-		return $errors;
-	}
-
->>>>>>> correcciones
 	// Función Crear Usuarios
 	function userCreator($data){
 		$user = [
 			'id' => setId(),
 			'name' => $data['userFullName'],
-<<<<<<< HEAD
       'nickname' => $data['nickname'],
-=======
->>>>>>> correcciones
 			'email' => $data['userEmail'],
 			'password' => password_hash($data['userPassword'], PASSWORD_DEFAULT),
 			'country' => $data['userCountry'],
 			'avatar' => $data['avatar'],
 		];
-<<<<<<< HEAD
 		return $user;
 	}
 	// Función Guardar Usuario
@@ -164,75 +111,17 @@
 	// Función si existe el email
 	function emailExist($email) {
 		$allUsers = getAllUsers();
-=======
-
-		return $user;
-	}
-
-	// Función Guardar Usuario
-	function saveUser($dataDePost){
-		$finalUser = userCreator($dataDePost);
-
-		$userInJsonFormat = json_encode($finalUser);
-
-		file_put_contents('data/users.json', $userInJsonFormat . PHP_EOL, FILE_APPEND);
-
-		return $finalUser;
-	}
-
-	// Función traer todos los Usuarios
-	function getAllUsers() {
-		$allUsersString = file_get_contents('data/users.json');
-
-		$usersInArray = explode(PHP_EOL, $allUsersString);
-		array_pop($usersInArray);
-
-		$finalUsersArray = [];
-
-		foreach ($usersInArray as $oneUser) {
-			$finalUsersArray[] = json_decode($oneUser, true);
-		}
-
-		return $finalUsersArray;
-	}
-
-	// Función Generar ID
-	function setId(){
-		$allUsers = getAllUsers();
-
-		if( count($allUsers) == 0 ) {
-			return 1;
-		}
-
-		$lastUser = array_pop($allUsers);
-
-		return $lastUser['id'] + 1;
-	}
-
-	// Función si existe el email
-	function emailExist($email) {
-		$allUsers = getAllUsers();
-
->>>>>>> correcciones
 		foreach ($allUsers as $oneUser) {
 			if ($email == $oneUser['email']) {
 				return true;
 			}
 		}
-<<<<<<< HEAD
 		return false;
 	}
-=======
-
-		return false;
-	}
-
->>>>>>> correcciones
 	// Función para subir la imagen
 	function saveImage($image) {
 		$imgName = $image['name'];
 		$ext = pathinfo($imgName, PATHINFO_EXTENSION);
-<<<<<<< HEAD
 		$theOriginalFile = $image['tmp_name'];
 		$finalName = uniqid('user_img_') .  '.' . $ext;
 		$theFinalFile = USER_IMAGE_PATH . $finalName;
@@ -244,27 +133,6 @@
 		$errors = [];
 		$email = trim($formData['userEmail']);
 		$password = trim($formData['userPassword']);
-=======
-
-		$theOriginalFile = $image['tmp_name'];
-
-		$finalName = uniqid('user_img_') .  '.' . $ext;
-
-		$theFinalFile = USER_IMAGE_PATH . $finalName;
-
-		move_uploaded_file($theOriginalFile, $theFinalFile);
-
-		return $finalName;
-	}
-
-	// funcion Validar Login
-	function loginValidate($formData) {
-		$errors = [];
-
-		$email = trim($formData['userEmail']);
-		$password = trim($formData['userPassword']);
-
->>>>>>> correcciones
 		if ( empty($email) ) {
 			$errors['email'] = 'Ingresá un correo electrónico';
 		} elseif( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
@@ -277,7 +145,6 @@
 				$errors['password'] = 'Contraseña incorrecta';
 			}
 		}
-<<<<<<< HEAD
 		if ( empty($password) ) {
 			$errors['password'] = 'Ingresá una contraseña';
 		}
@@ -286,34 +153,13 @@
 	// función traer al usuario por email
 	function getUserByEmail($email) {
 		$allUsers = getAllUsers();
-=======
-
-		if ( empty($password) ) {
-			$errors['password'] = 'Ingresá una contraseña';
-		}
-
-		return $errors;
-	}
-
-	// función traer al usuario por email
-	function getUserByEmail($email) {
-		$allUsers = getAllUsers();
-
->>>>>>> correcciones
 		foreach ($allUsers as $oneUser) {
 			if ($oneUser['email'] === $email) {
 				return $oneUser;
 			}
 		}
-<<<<<<< HEAD
 		return false;
 	}
-=======
-
-		return false;
-	}
-
->>>>>>> correcciones
 	// function logear al usuario
 	function logIn($user) {
 		unset($user['id']);
@@ -322,16 +168,8 @@
 		header('location: profile.php');
 		exit;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> correcciones
 	// function está logueado
 	function isLogged() {
 		return isset($_SESSION['user']);
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> correcciones
 ?>

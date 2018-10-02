@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 	$pageTitle = "Login";
 	include "partials/head.php";
@@ -11,6 +10,7 @@
 }
 
 	$registerFullName = isset($_POST['registerFullName']) ? trim($_POST['registerFullName']) : '';
+	$registerNickname = isset($_POST['registerNickname']) ? trim($_POST['registerNickname']) : '';
 	$registerEmail = isset($_POST['registerEmail']) ? trim($_POST['registerEmail']) : '';
 	$registerCountry = isset($_POST['registerCountry']) ? trim($_POST['registerCountry']) : '';
 	$errors = [];
@@ -24,34 +24,8 @@
 		}
 	}
 ?>
-=======
-    <?php
-        $pageTitle = "Login";
-        include "partials/head.php";
-
-        // Persistencia de datos
-        $userEmail = isset($_POST['userEmail']) ? trim($_POST['userEmail']) : '';
-        $userFullName = isset($_POST['userFullName']) ? trim($_POST['userFullName']) : '';
-        $userCountry = isset($_POST['userCountry']) ? trim($_POST['userCountry']) : '';
-        
-        $errors = []; //crea el array de errores a mostrar en los campos
-        if ($_POST) {
-            $errors = loginValidate($_POST);
-    
-            if ( count($errors) == 0) {
-                $user = getUserByEmail($_POST['userEmail']);
-    
-                if( isset($_POST['rememberUser']) ) {
-                    setcookie('userLogged', $_POST['userEmail'], time() + 3600);
-                }
-    
-                logIn($user);
-            }
-        }
-    ?>
->>>>>>> correcciones
     <!--navbar-->
-    <?php 
+    <?php
     $countries = [
 		'ar' => 'Argentina',
 		'bo' => 'Bolivia',
@@ -64,8 +38,8 @@
 		'uy' => 'Uruguay',
 		've' => 'Venezuela',
 	];
-    
-        require_once "partials/nav-login.php"; 
+
+        require_once "partials/nav-login.php";
     ?>
 
     <!--contenido de las secciones: login y registro home, amigos, faq, perfil-->
@@ -74,9 +48,9 @@
 			<section class="flexlogin">
 				<form action="" method="post">
 			          <h2>Iniciar sesión</h2>
-                      
+
                       <div class="formlogin-control">
-                        <input 
+                        <input
                             <?= isset($errors['email']) ? 'is-invalid' : ''; ?>
                             type="text" name="email" placeholder="Email" value=""
                         >
@@ -86,9 +60,9 @@
                             </div>
                         <?php endif; ?>
 			          </div>
-                      
+
                       <div class="formlogin-control">
-                        <input 
+                        <input
                         class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
                             name="password" placeholder="Password" type="password"
                         >
@@ -98,7 +72,7 @@
                             </div>
                         <?php endif; ?>
                       </div>
-                      
+
 			          <div class="rememberButtom">
 			            <label for="remember">
 			            <input checked='' name="remember" type="checkbox"/>
@@ -114,60 +88,132 @@
 			</section>
         </section>
 
-<<<<<<< HEAD
 				<!--fFORMULARIO DE REGISTRO-->
 
         <section class="flexregistry">
             <form action="register-controller.php" method="post" enctype="multipart/form-data">
-=======
-        <section class="flexregistry">
-            <form action="" method="post" enctype="multipart/form-data">
->>>>>>> correcciones
                 <span>Aún no tenes una cuenta?</span>
                 <h2>Registrate</h2>
                 <div class="formlogin-control">
                     <label for="Fullname">Nombre y Apellido</label>
-                    <input type="text" name="registerFullName" value="<?= $registerFullName; ?>" placeholder="Fullmane" <?= isset($errors['fullName']) ? 'is-invalid' : ''; ?>">
+                    <input
+										type="text"
+										name="registerFullName"
+										value="<?= $registerFullName; ?>"
+										placeholder="Fullmane"
+										class="form-control <?= isset($errors['fullName']) ? 'is-invalid' : ''; ?>"
+										value="<?= $registerFullName; ?>"
+								>
+								<?php if (isset($errors['fullName'])): ?>
+									<div class="invalid-feedback">
+										<?= $errors['fullName'] ?>
+									</div>
+								<?php endif; ?>
 
-										<?php if (isset($errors['fullName'])): ?>
-												<?= $errors['fullName'] ?>
-												<?php endif; ?>
                 </div>
 
                 <div class="formlogin-control">
-                    <label for="newUsername">Usuario</label>
-                    <input type="text" name="registerNickname" value="" placeholder="Username">
+                    <label>Usuario</label>
+                    <input
+										type="text"
+										name="registerNickname"
+										value="<?= $registerNickname; ?>"
+										placeholder="Username"
+										class="form-control <?= isset($errors['nickname']) ? 'is-invalid' : ''; ?>"
+										value="<?= $registerNickname; ?>" >
+
+										<?php if (isset($errors['nickname'])): ?>
+											<div class="invalid-feedback">
+												<?= $errors['nickname'] ?>
+											</div>
+										<?php endif; ?>
                 </div>
 
                 <div class="formlogin-control">
-                    <label for="Email">Email</label>
-                    <input type="email" name="registerEmail" value="" placeholder="@email.com">
+                    <label>Email</label>
+                    <input
+										type="email"
+										name="registerEmail"
+										value="<?= $registerEmail; ?>"
+										placeholder="@email.com"
+										class="form-control <?= isset($errors['email']) ? 'is-invalid' : ''; ?>"
+									value="<?= $registerEmail; ?>"
+								>
+								<?php if (isset($errors['email'])): ?>
+									<div class="invalid-feedback">
+										<?= $errors['email'] ?>
+									</div>
+								<?php endif; ?>
+
+
                 </div>
 
                 <div class="formlogin-control">
-                    <label for="password">Contraseña</label>
-                    <input type="password" name="registerPassword" value="" placeholder="Password">
+                    <label>Contraseña</label>
+                    <input
+										type="password"
+										name="registerPassword"
+										placeholder="Password"
+										class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+										>
+										<?php if (isset($errors['password'])): ?>
+									<div class="invalid-feedback">
+										<?= $errors['password'] ?>
+									</div>
+								<?php endif; ?>
+
                 </div>
 
                 <div class="formlogin-control">
-                    <label for="Repeatpassword">Repetir Contraseña</label>
-                    <input type="password" name="" value="" placeholder="Password">
+                    <label>Repetir Contraseña</label>
+                    <input
+										type="password"
+										name="registerRePassword"
+										placeholder="Password"
+										class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+										>
+										<?php if (isset($errors['password'])): ?>
+								<div class="invalid-feedback">
+									<?= $errors['password'] ?>
+								</div>
+							<?php endif; ?>
+
                 </div>
 
                 <div class="formlogin-control">
-                    <label for="Country">Nacionalidad:</label>
-                    <select class="Country" name="">
-                    <option value="ar">Argentina</option>
-                    <option value="br">Brasil</option>
-                    <option value="co">Colombia</option>
-                    <option value="ve">Venezuela</option>
-                    <option value="pe">Peru</option>
-                    <option value="Py">Paraguay</option>
+                    <label>Nacionalidad:</label>
+                    <select name="registerCountry"
+										class="form-control <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
+										>
+										<option value="">Elegí un país</option>
+											<?php foreach ($countries as $code => $country): ?>
+												<option
+												<?= $code == $registerCountry ? 'selected' : '' ?>
+												value="<?= $code ?>"><?= $country ?>
+											</option>
+										<?php endforeach; ?>
                     </select>
+										<?php if (isset($errors['country'])): ?>
+									<div class="invalid-feedback">
+										<?= $errors['country'] ?>
+									</div>
+								<?php endif; ?>
+
                 </div>
+
 								<div class="formlogin-control">
-									<label for="registerAvatar">Imagen de Perfil:</label>
-									<input type="file" name="registerAvatar" value="">
+									<label >Imagen de Perfil:</label>
+									<input
+									type="file"
+									name="registerAvatar"
+									class="custom-file-input <?= isset($errors['image']) ? 'is-invalid' : ''; ?>"
+									>
+									<label class="custom-file-label">Choose file...</label>
+									<?php if (isset($errors['image'])): ?>
+										<div class="invalid-feedback">
+											<?= $errors['image'] ?>
+										</div>
+									<?php endif; ?>
 								</div>
 
                 <div class="formlogin-control">
