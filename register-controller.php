@@ -59,7 +59,7 @@
 			$errors['country'] = 'Elegí un país';
 		}
 		if ( $avatar['error'] !== UPLOAD_ERR_OK ) {
-			$errors['image'] = 'Ché subite una imagen';
+			$errors['image'] = 'Subí una imagen';
 		} else {
 			$ext = pathinfo($avatar['name'], PATHINFO_EXTENSION);
 			if ( !in_array($ext, ALLOWED_IMAGE_TYPES) ) {
@@ -72,12 +72,12 @@
 	function userCreator($data){
 		$user = [
 			'id' => setId(),
-			'name' => $data['userFullName'],
-      		'nickname' => $data['nickname'],
-			'email' => $data['userEmail'],
-			'password' => password_hash($data['userPassword'], PASSWORD_DEFAULT),
-			'country' => $data['userCountry'],
-			'avatar' => $data['avatar'],
+			'name' => $data['registerFullName'],
+      		'nickname' => $data['registerNickname'],
+			'email' => $data['registerEmail'],
+			'password' => password_hash($data['registerPassword'], PASSWORD_DEFAULT),
+			'country' => $data['registerCountry'],
+			'avatar' => $data['registerAvatar'],
 		];
 		return $user;
 	}
