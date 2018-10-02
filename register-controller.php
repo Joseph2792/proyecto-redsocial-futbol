@@ -103,4 +103,12 @@ function postValidateTorneo($formData) {
 
   return $errors;
 }
+
+// Función Guardar Datos (Falta aclarar donde se va guardar )
+function saveData($dataDePost){
+		$finalData = userCreator($dataDePost);
+		$dataInJsonFormat = json_encode($finalData);
+		file_put_contents(/*'donde/seguarda.json'*/, $dataInJsonFormat . PHP_EOL, FILE_APPEND);
+		return $finalData;
+	}
 ?>
