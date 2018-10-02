@@ -1,4 +1,5 @@
 <?php
+require_once 'register-controller.php';
 	$pageTitle = "FAQ";
 	include "partials/head.php";
 ?>

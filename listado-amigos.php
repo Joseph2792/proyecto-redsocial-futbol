@@ -1,4 +1,5 @@
 <?php
+require_once 'register-controller.php';
 	$pageTitle = "Amigos";
 	include "partials/head.php";
 ?>

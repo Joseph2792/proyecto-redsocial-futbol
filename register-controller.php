@@ -28,7 +28,7 @@
 	function registerValidate($formData, $files) {
 		$errors = [];
 		$name = trim($formData['registerFullName']);
-    $nickname = trim($formData['registerNickname']);
+    	$nickname = trim($formData['registerNickname']);
 		$email = trim($formData['registerEmail']);
 		$password = trim($formData['registerPassword']);
 		$rePassword = trim($formData['registerRePassword']);
@@ -38,9 +38,9 @@
 		if ( empty($name) ) {
 			$errors['fullName'] = 'Escribí tu nombre completo';
 		}
-    if ( empty($nickname) ) {
-      $errors['nickname'] = 'Escribí tu nombre de Usuario';
-    }
+		if ( empty($nickname) ) {
+		$errors['nickname'] = 'Escribí tu nombre de Usuario';
+		}
 		if ( empty($email) ) {
 			$errors['email'] = 'Escribí tu correo electrónico';
 		} else if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
@@ -73,7 +73,7 @@
 		$user = [
 			'id' => setId(),
 			'name' => $data['userFullName'],
-      'nickname' => $data['nickname'],
+      		'nickname' => $data['nickname'],
 			'email' => $data['userEmail'],
 			'password' => password_hash($data['userPassword'], PASSWORD_DEFAULT),
 			'country' => $data['userCountry'],
@@ -165,7 +165,7 @@
 		unset($user['id']);
 		unset($user['password']);
 		$_SESSION['user'] = $user;
-		header('location: profile.php');
+		header('location: index.php');
 		exit;
 	}
 	// function está logueado
