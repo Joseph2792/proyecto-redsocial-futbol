@@ -28,7 +28,47 @@
               </button>
             </div>
             <div class="modal-body">
-              ...
+              <form class="form-group" action="" method="post">
+								<label>Lugar del partido:</label>
+								<input type="text" name="gameLocation" value="">
+								<br><br>
+								<label>Fecha:</label>
+								<div class="container">
+    							<div class="row">
+        						<div class='col-sm-6'>
+            					<div class="form-group">
+                				<div class='input-group date' id='datetimepicker1'>
+                    			<input type='text' name="calendar" class="form-control" />
+                    				<span class="input-group-addon">
+                        			<span class="glyphicon glyphicon-calendar"></span>
+                    				</span>
+                				</div>
+            					</div>
+        						</div>
+        						<script type="text/javascript">
+            					$(function () {
+                			$('#datetimepicker1').datetimepicker();
+            					});
+        						</script>
+    							</div>
+								</div>
+								<br>
+								<label>Valor: $</label>
+								<input type="text" name="gamePrice" value="">
+								</select>
+								<br><br>
+								<label>Cantidad de jugadores:</label>
+								<select class="number-of-players" name="numberOfPlayers">
+									<option value="">5</option>
+									<option value="">6</option>
+									<option value="">7</option>
+									<option value="">8</option>
+									<option value="">9</option>
+									<option value="">10</option>
+									<option value="">11</option>
+								</select>
+								<br>
+              </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -48,8 +88,49 @@
               </button>
             </div>
             <div class="modal-body">
-              ...
-            </div>
+							<label>Nombre del Torneo:</label>
+							<input type="text" name="torneoName" value="">
+							<label>Lugar del partido:</label>
+							<input type="text" name="gameLocation" value="">
+							<br><br>
+							<label>Fecha:</label>
+							<div class="container">
+								<div class="row">
+									<div class='col-sm-6'>
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker1'>
+												<input type='text' name="calendar" class="form-control">
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+											</div>
+										</div>
+									</div>
+									<script type="text/javascript">
+										$(function () {
+										$('#datetimepicker1').datetimepicker();
+										});
+									</script>
+								</div>
+							</div>
+							<br>
+							<label>Valor: $</label>
+							<input type="text" name="gamePrice" value="">
+							</select>
+							<br><br>
+							<label>Cantidad de jugadores:</label>
+							<select class="number-of-players" name="numberOfPlayers">
+								<option value="">5</option>
+								<option value="">6</option>
+								<option value="">7</option>
+								<option value="">8</option>
+								<option value="">9</option>
+								<option value="">10</option>
+								<option value="">11</option>
+							</select>
+							<br><br>
+						</form>
+					</div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-primary">Crear</button>
@@ -68,8 +149,40 @@
               </button>
             </div>
             <div class="modal-body">
-              ...
-            </div>
+							<label>Lugar del torneo:</label>
+							<input type="text" name="torneoLocation" value="">
+							<br><br>
+							<label>Fecha de inicio:</label>
+							<div class="container">
+								<div class="row">
+									<div class='col-sm-6'>
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker1'>
+												<input type='text' name="calendar" class="form-control" />
+													<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+													</span>
+											</div>
+										</div>
+									</div>
+									<script type="text/javascript">
+										$(function () {
+										$('#datetimepicker1').datetimepicker();
+										});
+									</script>
+								</div>
+							</div>
+							<br>
+							<label>Valor: $</label>
+							<input type="text" name="gamePrice" value="">
+							<br><br>
+							<label>Cantidad de equipos:</label>
+							<input type="number" name="numberOfTeams">
+							<br><br>
+							<label>Jugadores por equipo:</label>
+							<input type="number" name="numberOfPlayers">
+						</form>
+					</div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-primary">Crear</button>

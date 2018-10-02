@@ -27,7 +27,7 @@
 
 
 
-// DE A UN USUARIO POR imap_mail
+// DE A UN USUARIO POR MAIL
   function getUserByEmail($mail);{
   $allUsers = getUsers();
 
@@ -39,4 +39,68 @@
   return false;
 }
 
+
+// VALIDAR CAMPOS DEL NUEVO POSTEO
+
+  // NUEVO PARTIDO Y NUEVA FECHA
+function postValidatePartido($formData) {
+  $errors = [];
+
+  $place = trim($formData["gameLocation"]);
+  $calendar = trim($formData["calendar"]);
+  $price = trim($formData["gamePrice"]);
+  $numPlayers = trim($formData["numberOfPlayers"]);
+
+  if ( empty($place) ) {
+    $errors["gameLocation"] = "Ingresá un lugar!";
+  }
+
+  if ( empty($calendar) ) {
+    $errors["calendar"] = "Ingresá una fecha";
+  }
+
+  if ( empty($price) ) {
+    $errors["gamePrice"] = "Indicá el valor"
+  }
+
+  if (empty($numPlayers)) {
+    $errors["numberOfPlayers"] = "Indicá la cantidad de jugadores"
+  }
+
+  return $errors;
+}
+
+// NUEVO TORNEO
+
+function postValidateTorneo($formData) {
+  $errors = [];
+
+  $place = trim($formData["gameLocation"]);
+  $calendar = trim($formData["calendar"]);
+  $price = trim($formData["gamePrice"]);
+  $numTeams = trim($formData["numberOfTeams"]);
+  $numPlayers = trim($formData["numberOfPlayers"]);
+
+  if ( empty($place) ) {
+    $errors["gameLocation"] = "Ingresá un lugar!";
+  }
+
+  if ( empty($calendar) ) {
+    $errors["calendar"] = "Ingresá una fecha";
+  }
+
+  if ( empty($price) ) {
+    $errors["gamePrice"] = "Indicá el valor"
+  }
+
+  if ( empty($numTeams)) {
+    $errors["numberOfTeams"] = "Indicá la cantidad de equipos"
+  }
+
+  if (empty($numPlayers)) {
+    $errors["numberOfPlayers"] = "Indicá la cantidad de jugadores"
+  }
+
+  return $errors;
+}
 ?>
