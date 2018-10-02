@@ -8,12 +8,14 @@
 	header('location: index.php');
 	exit;
 }
+    $errors = []; //crea el array de errores a mostrar en los campos
 
+    // Persistencia de datos del registro
 	$registerFullName = isset($_POST['registerFullName']) ? trim($_POST['registerFullName']) : '';
 	$registerNickname = isset($_POST['registerNickname']) ? trim($_POST['registerNickname']) : '';
 	$registerEmail = isset($_POST['registerEmail']) ? trim($_POST['registerEmail']) : '';
-	$registerCountry = isset($_POST['registerCountry']) ? trim($_POST['registerCountry']) : '';
-	$errors = [];
+    $registerCountry = isset($_POST['registerCountry']) ? trim($_POST['registerCountry']) : '';
+
 	if ($_POST) {
 		$errors = registerValidate($_POST, $_FILES);
 		if ( count($errors) == 0 ) {
@@ -22,7 +24,24 @@
 			$user = saveUser($_POST);
 			logIn($user);
 		}
-	}
+    }
+
+    // Persistencia de datos del login
+    $userEmail = isset($_POST['email']) ? trim($_POST['email']) : '';
+    
+    if ($_POST) {
+        $errors2 = loginValidate($_POST);
+
+        if ( count($errors2) == 0) {
+            $user = getUserByEmail($_POST['userEmail']);
+
+            if( isset($_POST['rememberUser']) ) {
+                setcookie('userLogged', $_POST['userEmail'], time() + 3600);
+            }
+
+            logIn($user);
+        }
+    }
 ?>
     <!--navbar-->
     <?php
@@ -50,25 +69,25 @@
 			          <h2>Iniciar sesión</h2>
 
                       <div class="formlogin-control">
-                        <input
-                            <?= isset($errors['email']) ? 'is-invalid' : ''; ?>
-                            type="text" name="email" placeholder="Email" value=""
+                        <input 
+                            class="form-control  <?= isset($errors2['email']) ? 'is-invalid' : ''; ?>"
+                            type="text" name="email" placeholder="Email" value="<?= $userEmail?>"
                         >
                         <?php if (isset($errors['email'])): ?>
                             <div class="invalid-feedback">
-                                <?= $errors['email'] ?>
+                                <?= $errors2['email'] ?>
                             </div>
                         <?php endif; ?>
 			          </div>
 
                       <div class="formlogin-control">
-                        <input
-                        class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+                        <input 
+                            class="form-control <?= isset($errors2['password']) ? 'is-invalid' : ''; ?>"
                             name="password" placeholder="Password" type="password"
                         >
                         <?php if (isset($errors['password'])): ?>
                             <div class="invalid-feedback">
-                                <?= $errors['password'] ?>
+                                <?= $errors2['password'] ?>
                             </div>
                         <?php endif; ?>
                       </div>
@@ -77,20 +96,24 @@
 			            <label for="remember">
 			            <input checked='' name="remember" type="checkbox"/>
 			            Recordar password.</label>
-			          </div>
+			          </div>                     
 
-			            <input class="submit" type="submit" value="Ingresar"/><br>
+			          <input class="submit" type="submit" value="Ingresar"/><br>
+                      <a class="forgotPass" href='#'>Olvidaste tu contraseña?</a><br>
 
 			          <button class="btnFb">Conectarse con Facebook</button>
 
-			            <a class="forgotPass" href='#'>Olvidaste tu contraseña?</a>
+			          <a class="forgotPass" href='#' onClick="mostrarRegistro()">Ir a Registrarme</a>
 			  </form>
 			</section>
         </section>
+        <script>
+            function mostrarRegistro(){
+                $("#registro").toggle();
+            }
+        </script>
 
-				<!--fFORMULARIO DE REGISTRO-->
-
-        <section class="flexregistry">
+        <section id="registro" class="flexregistry" style="display: none;">
             <form action="" method="post" enctype="multipart/form-data">
                 <span>Aún no tenes una cuenta?</span>
                 <h2>Registrate</h2>

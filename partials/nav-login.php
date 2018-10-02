@@ -40,6 +40,7 @@
 
                 <a class="ico-nav" href="FAQ.php" data-toggle="tooltip" data-placement="bottom" title="Preguntas Frecuentes">
                     <i class="fa fa-question-circle"></i>
+                    <span>Ayuda</span>
                 </a>
             </div>
         </div>
