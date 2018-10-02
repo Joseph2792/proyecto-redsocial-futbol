@@ -481,11 +481,11 @@ require_once 'register-controller.php';
             </ul>
         </section>
     <!--fin del contenido-->
-        <div class="chat col-3">
-            <div class="messages col-3">
-                <a href="#"><i class="fas fa-circle"></i>Mensajes (2)</a>
-            <a href="#"><i class="fas fa-ellipsis-h" title="Opciones"></i></a>
-            </div>
+        <div class="msn">
+            <a href="#" title="Chat (0)" data-toggle="popover" data-placement="left" data-content="No hay mensajes por leer">
+                <i class="fas fa-envelope"></i>
+                <span class="numb"></span>
+            </a>
         </div>
     </div>
     <!--scripts ed jquery y bootstrap-->

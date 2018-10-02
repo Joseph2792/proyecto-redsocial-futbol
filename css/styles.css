@@ -391,6 +391,13 @@ footer{
 }
 
 /*----------break points-------------------*/
+.invalid-feedback{
+	color: white !important;
+	background: red !important;
+	border-radius: 5px !important;
+	padding: 3px 0 !important;
+}
+
 @media (min-width: 640px){
 	.cont-nav .cont-iconos{
 		display: flex;

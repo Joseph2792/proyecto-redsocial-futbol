@@ -8,3 +8,4 @@
 	$_SESSION['miGalletita'] = $_COOKIE['temporal'];
 
 	myDebug($_SESSION, 'print_r');
+?>

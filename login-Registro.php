@@ -17,10 +17,10 @@
         $errors = loginValidate($_POST);
 
         if ( count($errors) == 0) {
-            $user = getUserByEmail($_POST['userEmail']);
+            $user = getUserByEmail($_POST['email']);
 
             if( isset($_POST['rememberUser']) ) {
-                setcookie('userLogged', $_POST['userEmail'], time() + 3600);
+                setcookie('userLogged', $_POST['email'], time() + 3600);
             }
 
             logIn($user);
