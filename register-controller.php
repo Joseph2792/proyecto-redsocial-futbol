@@ -27,7 +27,7 @@
 
 
 
-// DE A UN USUARIO POR MAIL
+// TRAER DE A UN USUARIO POR MAIL
   function getUserByEmail($mail);{
   $allUsers = getUsers();
 
@@ -75,14 +75,15 @@ function postValidatePartido($formData) {
 function postValidateTorneo($formData) {
   $errors = [];
 
-  $place = trim($formData["gameLocation"]);
+  $torneoName = trim($formData["torneoName"]);
+  $place = trim($formData["torneoLocation"]);
   $calendar = trim($formData["calendar"]);
   $price = trim($formData["gamePrice"]);
   $numTeams = trim($formData["numberOfTeams"]);
   $numPlayers = trim($formData["numberOfPlayers"]);
 
   if ( empty($place) ) {
-    $errors["gameLocation"] = "Ingresá un lugar!";
+    $errors["torneoLocation"] = "Ingresá un lugar!";
   }
 
   if ( empty($calendar) ) {
@@ -102,5 +103,82 @@ function postValidateTorneo($formData) {
   }
 
   return $errors;
+}
+
+// CREAR NUEVO POSTEO
+  // PARTIDO
+function postPartidoCreator($data){
+  $post = [
+    "id" => setId(),
+    "place" => $data["gameLocation"],
+    "calendar" => $data["calendar"],
+    "price" => $data["gamePrice"],
+    "numPlayers" => $data["numberOfPlayers"],
+    ];
+
+  return $user;
+}
+
+  // FECHA
+function postFechaCreator($data){
+  $post = [
+    "id" => setId(),
+    "torneoName" => $data["torneoName"]
+    "place" => $data["gameLocation"],
+    "calendar" => $data["calendar"],
+    "price" => $data["gamePrice"],
+    "numPlayers" => $data["numberOfPlayers"],
+   ];
+
+  return $user;
+}
+
+// TORNEO
+function postTorneoCreator($data){
+$post = [
+  "id" => setId(),
+  "torneoName" => $data["torneoName"],
+  "place" => $data["torneoLocation"],
+  "calendar" => $data["calendar"],
+  "price" => $data["gamePrice"],
+  "numTeams" => $data["numberOfTeams"],
+  "numPlayers" => $data["numberOfPlayers"],
+ ];
+
+return $user;
+}
+
+// GUARDAR CONTENIDO DEL POSTEO
+  // PARTIDO
+function savePostPartido($dataDePost){
+  $finalPostPartido = postPartidoCreator($dataDePost);
+
+  $postPartidoInJsonFormat = json_encode($finalPostPartido);
+
+  file_put_contents('data/postPartido.json', $postPartidoInJsonFormat . PHP_EOL, FILE_APPEND);
+
+  return $finalPostPartido;
+}
+
+// FECHA
+function savePostFecha($dataDePost){
+  $finalPostFecha = postFechaCreator($dataDePost);
+
+  $postFechaInJsonFormat = json_encode($finalPostFecha);
+
+  file_put_contents('data/postFecha.json', $postFechaInJsonFormat . PHP_EOL, FILE_APPEND);
+
+  return $finalPostFecha;
+}
+
+// TORNEO
+function savePostTorneo($dataDePost){
+  $finalPostTorneo = postTorneoCreator($dataDePost);
+
+  $postTorneoInJsonFormat = json_encode($finalPostTorneo);
+
+  file_put_contents('data/postTorneo.json', $postTorneoInJsonFormat . PHP_EOL, FILE_APPEND);
+
+  return $finalPostTorneo;
 }
 ?>

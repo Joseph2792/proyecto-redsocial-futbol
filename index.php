@@ -30,7 +30,11 @@
             <div class="modal-body">
               <form class="form-group" action="" method="post">
 								<label>Lugar del partido:</label>
-								<input type="text" name="gameLocation" value="">
+									<input type="text" name="gameLocation" value="<?= $gameLocation; ?>" class="form-control <?= isset($errors["gameLocation"]) ? "is-invalid" : ""; ?>">
+									<?php if (isset($errors["gameLocation"])) : ?>
+										<div class="invalid-feedback">
+												<?= $errors["gameLocation"] ?>
+										</div>
 								<br><br>
 								<label>Fecha:</label>
 								<div class="container">
@@ -38,7 +42,11 @@
         						<div class='col-sm-6'>
             					<div class="form-group">
                 				<div class='input-group date' id='datetimepicker1'>
-                    			<input type='text' name="calendar" class="form-control" />
+													<input type="text" name="calendar" value="<?= $calendar; ?>" class="form-control <?= isset($errors["calendar"]) ? "is-invalid" : ""; ?>">
+													<?php if (isset($errors["calendar"])) : ?>
+														<div class="invalid-feedback">
+																<?= $errors["calendar"] ?>
+														</div>
                     				<span class="input-group-addon">
                         			<span class="glyphicon glyphicon-calendar"></span>
                     				</span>
@@ -54,8 +62,10 @@
 								</div>
 								<br>
 								<label>Valor: $</label>
-								<input type="text" name="gamePrice" value="">
-								</select>
+								<input type="number" name="gamePrice" value="<?= $price; ?>" class="form-control <?= isset($errors["gamePrice"]) ? "is-invalid" : ""; ?>">
+								<?php if (isset($errors["gamePrice"])) : ?>
+									<div class="invalid-feedback">
+											<?= $errors["gamePrice"] ?>
 								<br><br>
 								<label>Cantidad de jugadores:</label>
 								<select class="number-of-players" name="numberOfPlayers">
@@ -66,6 +76,10 @@
 									<option value="">9</option>
 									<option value="">10</option>
 									<option value="">11</option>
+									<?php if (isset($errors["numberOfPlayers"])) : ?>
+										<div class="invalid-feedback">
+											<?= $errors["numberOfPlayers"] ?>
+										</div>
 								</select>
 								<br>
               </form>
@@ -91,16 +105,22 @@
 							<label>Nombre del Torneo:</label>
 							<input type="text" name="torneoName" value="">
 							<label>Lugar del partido:</label>
-							<input type="text" name="gameLocation" value="">
-							<br><br>
+							<input type="text" name="gameLocation" value="<?= $gameLocation; ?>" class="form-control <?= isset($errors["gameLocation"]) ? "is-invalid" : ""; ?>">
+							<?php if (isset($errors["gameLocation"])) : ?>
+								<div class="invalid-feedback">
+										<?= $errors["gameLocation"] ?>
+								</div>							<br><br>
 							<label>Fecha:</label>
 							<div class="container">
 								<div class="row">
 									<div class='col-sm-6'>
 										<div class="form-group">
 											<div class='input-group date' id='datetimepicker1'>
-												<input type='text' name="calendar" class="form-control">
-													<span class="input-group-addon">
+												<input type="text" name="calendar" value="<?= $calendar; ?>" class="form-control <?= isset($errors["calendar"]) ? "is-invalid" : ""; ?>">
+												<?php if (isset($errors["calendar"])) : ?>
+													<div class="invalid-feedback">
+															<?= $errors["calendar"] ?>
+													</div><span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
 											</div>
@@ -115,8 +135,10 @@
 							</div>
 							<br>
 							<label>Valor: $</label>
-							<input type="text" name="gamePrice" value="">
-							</select>
+							<input type="number" name="gamePrice" value="<?= $price; ?>" class="form-control <?= isset($errors["gamePrice"]) ? "is-invalid" : ""; ?>">
+							<?php if (isset($errors["gamePrice"])) : ?>
+								<div class="invalid-feedback">
+										<?= $errors["gamePrice"] ?>
 							<br><br>
 							<label>Cantidad de jugadores:</label>
 							<select class="number-of-players" name="numberOfPlayers">
@@ -127,6 +149,9 @@
 								<option value="">9</option>
 								<option value="">10</option>
 								<option value="">11</option>
+								<?php if (isset($errors["numberOfPlayers"])) : ?>
+									<div class="invalid-feedback">
+										<?= $errors["numberOfPlayers"] ?>
 							</select>
 							<br><br>
 						</form>
@@ -149,8 +174,18 @@
               </button>
             </div>
             <div class="modal-body">
+							<label>Nombre del Torneo:</label>
+							<input type="text" name="torneoName" value="<?= $torneoName; ?>" class="form-control <?= isset($errors["torneoName"]) ? "is-invalid" : ""; ?>">
+							<?php if (isset($errors["torneoName"])) : ?>
+								<div class="invalid-feedback">
+										<?= $errors["torneoName"] ?>
+								</div>							<br><br>
 							<label>Lugar del torneo:</label>
-							<input type="text" name="torneoLocation" value="">
+							<input type="text" name="torneoLocation" value="<?= $torneoLocation; ?>" class="form-control <?= isset($errors["torneoLocation"]) ? "is-invalid" : ""; ?>">
+							<?php if (isset($errors["torneoLocation"])) : ?>
+								<div class="invalid-feedback">
+										<?= $errors["torneoLocation"] ?>
+								</div>							<br><br>
 							<br><br>
 							<label>Fecha de inicio:</label>
 							<div class="container">
@@ -158,7 +193,10 @@
 									<div class='col-sm-6'>
 										<div class="form-group">
 											<div class='input-group date' id='datetimepicker1'>
-												<input type='text' name="calendar" class="form-control" />
+												<input type="text" name="calendar" value="<?= $calendar; ?>" class="form-control <?= isset($errors["calendar"]) ? "is-invalid" : ""; ?>">
+												<?php if (isset($errors["calendar"])) : ?>
+													<div class="invalid-feedback">
+															<?= $errors["calendar"] ?>
 													<span class="input-group-addon">
 														<span class="glyphicon glyphicon-calendar"></span>
 													</span>
@@ -174,13 +212,22 @@
 							</div>
 							<br>
 							<label>Valor: $</label>
-							<input type="text" name="gamePrice" value="">
+							<input type="number" name="gamePrice" value="<?= $price; ?>" class="form-control <?= isset($errors["gamePrice"]) ? "is-invalid" : ""; ?>">
+							<?php if (isset($errors["gamePrice"])) : ?>
+								<div class="invalid-feedback">
+										<?= $errors["gamePrice"] ?>
 							<br><br>
 							<label>Cantidad de equipos:</label>
 							<input type="number" name="numberOfTeams">
+							<?php if (isset($errors["numberOfTeams"])) : ?>
+								<div class="invalid-feedback">
+									<?= $errors["numberOfTeams"] ?>
 							<br><br>
 							<label>Jugadores por equipo:</label>
 							<input type="number" name="numberOfPlayers">
+							<?php if (isset($errors["numberOfPlayers"])) : ?>
+								<div class="invalid-feedback">
+									<?= $errors["numberOfPlayers"] ?>
 						</form>
 					</div>
             <div class="modal-footer">
