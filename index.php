@@ -78,15 +78,11 @@ require_once 'register-controller.php';
           </div>
         </div>
       </div>
-
-
-
-    <br>
+  
     	<div class="col-12 col-sm-12 col-md-8 col-lg-6">
         <div class="post-container">
           <div class="post-description">
             <img src="img/icons/trofeo.png" class="event-icon-trophy">
-            <br>
             <div class="description">
               <h4>Torneo - Club Angel Gallardo</h4>
               <h6>Jueves 23 de agosto, $130 por persona</h6>
@@ -127,7 +123,6 @@ require_once 'register-controller.php';
         </div>
 
       </div>
-      <br>
       <div class="col-12 col-sm-12 col-md-8 col-lg-6">
         <div class="post-container">
           <div class="post-description">
@@ -173,8 +168,7 @@ require_once 'register-controller.php';
           </div>
         </div>
 			</div>
-				<br>
-				<div class="col-12 col-sm-12 col-md-8 col-lg-6">
+			<div class="col-12 col-sm-12 col-md-8 col-lg-6">
 		        <div class="post-container">
 		          <div class="post-description">
 		            <img src="img/icons/trofeo.png" class="event-icon-trophy">
@@ -217,13 +211,14 @@ require_once 'register-controller.php';
 		            <a href="#" title="Comentar"><i class="fas fa-comment-dots col-1"></i></a>
 		          </div>
 		        </div>
-            <div class="msn">
-                <a href="#" title="Chat (0)" data-toggle="popover" data-placement="left" data-content="No hay mensajes por leer">
-                    <i class="fas fa-envelope"></i>
-                    <span class="numb"></span>
-                </a>
-            </div>
+      </div>     
     <!--fin del contenido-->
+      <div class="msn">
+          <a href="#" title="Chat (0)" data-toggle="popover" data-placement="left" data-content="No hay mensajes por leer">
+              <i class="fas fa-envelope"></i>
+              <span class="numb"></span>
+          </a>
+      </div>
     </div>
     <!--scripts ed jquery y bootstrap-->
     <?php require_once "partials/scripts.php"; ?>
