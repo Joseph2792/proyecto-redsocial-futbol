@@ -94,7 +94,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="formlogin-control col-sm-12 col-md-6">
-                        <label>Nacionalidad:</label>
+                        <label>Nacionalidad</label>
                         <select name="registerCountry"
                             class="form-control <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
                             >
@@ -149,14 +149,14 @@
                 </div>
                 <div class="row">
                 <div class="formlogin-control col-sm-12 col-md-6">
-                    <label><b>Imagen de perfil:</b></label>
+                    <label><b>Imagen de perfil</b></label>
                     <div class="custom-file">
                         <input
                             type="file"
                             class="custom-file-input <?= isset($errors['image']) ? 'is-invalid' : ''; ?>"
                             name="registerAvatar"
                         >
-                        <label class="custom-file-label">Elegí una foto...</label>
+                        <label class="custom-file-label update-img">Elegí una foto...</label>
                         <?php if (isset($errors['image'])): ?>
                             <div class="invalid-feedback">
                                 <?= $errors['image'] ?>

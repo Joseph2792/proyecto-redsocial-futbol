@@ -107,7 +107,12 @@
   display: flex;
   border: none;
 }
-
+.update-img{
+  text-align: left !important;
+}
+.update-img::after{
+  content: "Buscar" !important;
+}
 
 
 
