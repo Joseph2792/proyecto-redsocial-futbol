@@ -10,6 +10,6 @@
     <!-- Librería de JS de Bootstrap -->
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 </body>
 </html>

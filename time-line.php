@@ -8,7 +8,11 @@ require_once 'register-controller.php';
     <div class="contenedor container">
     <!--contenido de las secciones: login y registro home, amigos, faq, perfil-->
         <section>
-      
+        <label>Select Date: </label>
+        <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+            <input class="form-control" type="text" readonly />
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
         </section>
     <!--fin del contenido-->
         <div class="msn">
@@ -19,5 +23,14 @@ require_once 'register-controller.php';
         </div>
 
     </div>
+    <script>
+    $(function () {
+  $("#datepicker").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+  }).datepicker('update', new Date());
+});
+
+    </script>
     <!--scripts ed jquery y bootstrap-->
     <?php require_once "partials/scripts.php"; ?>
