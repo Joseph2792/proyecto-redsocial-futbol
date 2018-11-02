@@ -50,14 +50,14 @@
                         <input
                             type="text"
                             name="registerFullName"
-                            value="<?= $registerFullName; ?>"
-                            placeholder="Fullmane"
-                            class="form-control <?= isset($errors['fullName']) ? 'is-invalid' : ''; ?>"
+                            value="<?= $FormData->getName() ; ?>"
+                            placeholder="FullName"
+                            class="form-control <?= $FormData->fieldHasError('fullName') ? 'is-invalid' : ''; ?>"
                         >
-                        <?php if (isset($errors['fullName'])): ?>
-                            <div class="invalid-feedback">
-                                <?= $errors['fullName'] ?>
-                            </div>
+                        <?php if ( $FormData->fieldHasError('name') ): ?>
+													<div class="invalid-feedback">
+														<?= $FormData->getFieldError('name') ?>
+                          </div>
                         <?php endif; ?>
                     </div>
 
@@ -66,13 +66,13 @@
                         <input
                             type="text"
                             name="registerNickname"
-                            value="<?= $registerNickname; ?>"
+                            value="<?= $FormData->getName(); ?>"
                             placeholder="Username"
-                            class="form-control <?= isset($errors['nickname']) ? 'is-invalid' : ''; ?>"
-                        >    
-                        <?php if (isset($errors['nickname'])): ?>
+                            class="form-control <?= $FormData->fieldHasError('nickName') ? 'is-invalid' : ''; ?>"
+                        >
+                        <?php if ( $FormData->fieldHasError('nickName') ): ?>
                             <div class="invalid-feedback">
-                                <?= $errors['nickname'] ?>
+                              <?= $FormData->getFieldError('nickName') ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -83,32 +83,32 @@
                         <input
                             type="email"
                             name="registerEmail"
-                            value="<?= $registerEmail; ?>"
-                            placeholder="@email.com"
-                            class="form-control <?= isset($errors['email']) ? 'is-invalid' : ''; ?>"
+                            value="<?= $FormData->getEmail() ; ?>"
+                            placeholder="usuario@email.com"
+                            class="form-control <?= $FormData->fieldHasError('email') ? 'is-invalid' : ''; ?>"
                         >
-                        <?php if (isset($errors['email'])): ?>
+                        <?php if ( $FormData->fieldHasError('email') ): ?>
                             <div class="invalid-feedback">
-                                <?= $errors['email'] ?>
+                              <?= $FormData->getFieldError('email') ?>
                             </div>
                         <?php endif; ?>
                     </div>
                     <div class="formlogin-control col-sm-12 col-md-6">
                         <label>Nacionalidad</label>
                         <select name="registerCountry"
-                            class="form-control <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
+                            class="form-control <?= $FormData->fieldHasError('country') ? 'is-invalid' : ''; ?>"
                             >
                             <option value="">Elegí un país</option>
                                 <?php foreach ($countries as $code => $country): ?>
                                     <option
-                                    <?= $code == $registerCountry ? 'selected' : '' ?>
+                                    <?= $code == $FormData->getCountry() ? 'selected' : '' ?>
                                     value="<?= $code ?>"><?= $country ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
-                        <?php if (isset($errors['country'])): ?>
+                        <?php if ($FormData->fieldHasError('country') ): ?>
                             <div class="invalid-feedback">
-                                <?= $errors['country'] ?>
+                                <?= $FormData->getFieldError('country') ?>
                             </div>
                         <?php endif; ?>
 
@@ -122,11 +122,11 @@
                             type="password"
                             name="registerPassword"
                             placeholder="Password"
-                            class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+                            class="form-control <?= $FormData->fieldHasError('password') ? 'is-invalid' : '' ?>"
                         >
-                        <?php if (isset($errors['password'])): ?>
+                        <?php if ($FormData->fieldHasError('password') ): ?>
                             <div class="invalid-feedback">
-                                <?= $errors['password'] ?>
+                                <?= $FormData->getFieldError('password') ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -137,11 +137,11 @@
                             type="password"
                             name="registerRePassword"
                             placeholder="Password"
-                            class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+                            class="form-control <?= $FormData->fieldHasError('password') ? 'is-invalid' : ''; ?>"
                         >
-                        <?php if (isset($errors['password'])): ?>
+                        <?php if ( $FormData->fieldHasError('password') ): ?>
                             <div class="invalid-feedback">
-                                <?= $errors['password'] ?>
+                                <?= $FormData->getFieldError('password') ?>
                             </div>
                         <?php endif; ?>
 
@@ -153,13 +153,13 @@
                     <div class="custom-file">
                         <input
                             type="file"
-                            class="custom-file-input <?= isset($errors['image']) ? 'is-invalid' : ''; ?>"
+                            class="custom-file-input <?=  $FormData->fieldHasError('image') ? 'is-invalid' : ''; ?>"
                             name="registerAvatar"
                         >
                         <label class="custom-file-label update-img">Elegí una foto...</label>
-                        <?php if (isset($errors['image'])): ?>
+                        <?php if ( $FormData->fieldHasError('avatar') ):?>
                             <div class="invalid-feedback">
-                                <?= $errors['image'] ?>
+                                <?= $FormData->getFieldError('image') ?>
                             </div>
                         <?php endif; ?>
                     </div>

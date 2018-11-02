@@ -1,5 +1,6 @@
 <?php
 	require_once 'config.php';
+	require_once 'RegisterAndLoginFormValidator';
 	session_start();
 	if ( isset($_COOKIE['userLogged'] ) ) {
 		$user = getUserByEmail($_COOKIE['userLogged']);
@@ -25,49 +26,49 @@
 		exit;
 	}
 	// Validar el Register
-	function registerValidate($formData, $files) {
-		$errors = [];
-		$name = trim($formData['registerFullName']);
-    	$nickname = trim($formData['registerNickname']);
-		$email = trim($formData['registerEmail']);
-		$password = trim($formData['registerPassword']);
-		$rePassword = trim($formData['registerRePassword']);
-		$country = trim($formData['registerCountry']);
-		$avatar = $files['registerAvatar'];
-
-		if ( empty($name) ) {
-			$errors['fullName'] = 'Escribí tu nombre completo';
-		}
-		if ( empty($nickname) ) {
-		$errors['nickname'] = 'Escribí tu nombre de Usuario';
-		}
-		if ( empty($email) ) {
-			$errors['email'] = 'Escribí tu correo electrónico';
-		} else if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
-			$errors['email'] = 'Escribí un correo válido';
-		} else if ( emailExist($email) ) {
-			$errors['email'] = 'Ese email ya fue registrado';
-		}
-		if ( empty($password) || empty($rePassword) ) {
-			$errors['password'] = 'La contraseña no puede estar vacía';
-		} elseif ( $password != $rePassword) {
-			$errors['password'] = 'Las contraseñas no coinciden';
-		} elseif ( strlen($password) < 4 || strlen($rePassword) < 4 ) {
-			$errors['password'] = 'La contraseña debe tener más de 4 caracteres';
-		}
-		if ( empty($country) ) {
-			$errors['country'] = 'Elegí un país';
-		}
-		if ( $avatar['error'] !== UPLOAD_ERR_OK ) {
-			$errors['image'] = 'Subí una imagen';
-		} else {
-			$ext = pathinfo($avatar['name'], PATHINFO_EXTENSION);
-			if ( !in_array($ext, ALLOWED_IMAGE_TYPES) ) {
-				$errors['image'] = 'Formato de imagen no permitido';
-			}
-		}
-		return $errors;
-	}
+	// function registerValidate($formData, $files) {
+	// 	$errors = [];
+	// 	$name = trim($formData['registerFullName']);
+  //   	$nickname = trim($formData['registerNickname']);
+	// 	$email = trim($formData['registerEmail']);
+	// 	$password = trim($formData['registerPassword']);
+	// 	$rePassword = trim($formData['registerRePassword']);
+	// 	$country = trim($formData['registerCountry']);
+	// 	$avatar = $files['registerAvatar'];
+	//
+	// 	if ( empty($name) ) {
+	// 		$errors['fullName'] = 'Escribí tu nombre completo';
+	// 	}
+	// 	if ( empty($nickname) ) {
+	// 	$errors['nickname'] = 'Escribí tu nombre de Usuario';
+	// 	}
+	// 	if ( empty($email) ) {
+	// 		$errors['email'] = 'Escribí tu correo electrónico';
+	// 	} else if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+	// 		$errors['email'] = 'Escribí un correo válido';
+	// 	} else if ( emailExist($email) ) {
+	// 		$errors['email'] = 'Ese email ya fue registrado';
+	// 	}
+	// 	if ( empty($password) || empty($rePassword) ) {
+	// 		$errors['password'] = 'La contraseña no puede estar vacía';
+	// 	} elseif ( $password != $rePassword) {
+	// 		$errors['password'] = 'Las contraseñas no coinciden';
+	// 	} elseif ( strlen($password) < 4 || strlen($rePassword) < 4 ) {
+	// 		$errors['password'] = 'La contraseña debe tener más de 4 caracteres';
+	// 	}
+	// 	if ( empty($country) ) {
+	// 		$errors['country'] = 'Elegí un país';
+	// 	}
+	// 	if ( $avatar['error'] !== UPLOAD_ERR_OK ) {
+	// 		$errors['image'] = 'Subí una imagen';
+	// 	} else {
+	// 		$ext = pathinfo($avatar['name'], PATHINFO_EXTENSION);
+	// 		if ( !in_array($ext, ALLOWED_IMAGE_TYPES) ) {
+	// 			$errors['image'] = 'Formato de imagen no permitido';
+	// 		}
+	// 	}
+	// 	return $errors;
+	// }
 	// Función Crear Usuarios
 	function userCreator($data){
 		$user = [
