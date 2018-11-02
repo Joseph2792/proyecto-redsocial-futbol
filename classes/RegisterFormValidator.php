@@ -28,7 +28,7 @@
 				$this->addError('fullName', 'Escribí tu nombre completo');
 			}
 			if ( empty($this->nickname) ) {
-				$this->addError('nickName', 'Escribí tu nombre de Usuario')
+				$this->addError('nickName', 'Escribí tu nombre de Usuario');
 			}
 
 			if ( empty($this->email) ) {
@@ -36,7 +36,7 @@
 			} else if ( !filter_var($this->email, FILTER_VALIDATE_EMAIL) ) {
 				$this->addError('email', 'Escribí un correo válido');
 			} else if ( emailExist($this->email) ) {
-				$this->addError('email', 'Ese email ya fue registrado')
+				$this->addError('email', 'Ese email ya fue registrado');
 			}
 
 			if ( empty($this->password) || empty($this->rePassword) ) {

@@ -1,6 +1,6 @@
 <?php
 	require_once 'config.php';
-	require_once 'RegisterAndLoginFormValidator';
+	require_once 'classes/RegisterFormValidator.php';
 	session_start();
 	if ( isset($_COOKIE['userLogged'] ) ) {
 		$user = getUserByEmail($_COOKIE['userLogged']);
