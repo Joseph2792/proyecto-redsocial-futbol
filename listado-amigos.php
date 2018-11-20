@@ -5,7 +5,7 @@ require_once 'register-controller.php';
 ?>
     <!--navbar-->
     <?php require_once "partials/nav-login.php"; ?>
-    <div class="contenedor container">
+    <div class="contenedor container-fluid">
     <!--contenido de las secciones: login y registro home, amigos, faq, perfil-->
         <section class="row cont-header-friends">
             <h1>Amigos</h1>
